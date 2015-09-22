@@ -35,7 +35,7 @@ function search(){
 	// Clear Results
 	$('#results').html('');
 	$('#buttons').html('');
-	
+
 	// Get Form Input
 	q = $('#query').val();
 
@@ -89,7 +89,8 @@ function nextPage(){
 			q: q,
 			pageToken: token,
 			type:'video',
-			key: 'AIzaSyCvk3NNMQASZgFkCNxIp9jH-l8O0PXhDUo'},
+			// key: 'AIzaSyCvk3NNMQASZgFkCNxIp9jH-l8O0PXhDUo'},
+			key: 'AIzaSyBX4UBXXEN1cCV9BAkaSOAZI7N55knR7PM'},
 			function(data){
 				var nextPageToken = data.nextPageToken;
 				var prevPageToken = data.prevPageToken;
@@ -133,7 +134,8 @@ function prevPage(){
 			q: q,
 			pageToken: token,
 			type:'video',
-			key: 'AIzaSyCvk3NNMQASZgFkCNxIp9jH-l8O0PXhDUo'},
+			// key: 'AIzaSyCvk3NNMQASZgFkCNxIp9jH-l8O0PXhDUo'},
+			key: 'AIzaSyBX4UBXXEN1cCV9BAkaSOAZI7N55knR7PM'},
 			function(data){
 				var nextPageToken = data.nextPageToken;
 				var prevPageToken = data.prevPageToken;
