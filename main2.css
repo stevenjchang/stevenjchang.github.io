@@ -1,0 +1,58 @@
+.nav-pills{
+	font-family: Lobster;
+	font-size: 1.7em;
+	background-color: black;
+}
+
+body{
+	background-color: white;
+	font-family: Lobster;
+}
+
+.pageOne h1{
+	padding: 0;
+	margin-top: 0px;
+	font-size: 4.0em;
+}
+
+.pageOne .block{
+	
+	opacity: 9.9;
+	padding: 10px;
+
+}
+
+.pageOne{
+	background-image:url('https://images.unsplash.com/photo-1451337516015-6b6e9a44a8a3?'); 
+    /* background-image:url("http://stevenjchang.github.io/background.jpg"); */
+	/* background-image:url("http://stevenjchang.github.io/airbnb/bg.png"); */
+	height: 800px;
+	background-size: cover;
+	font-family: Lobster;
+}
+
+.pageOne .btn-default {
+	background-color: black;
+	border-color: black;
+	color: #337ab7;
+	font-size: 1.7em;
+};
+
+.pageTwo{
+	background-image:url('https://images.unsplash.com/photo-1452716726610-30ed68426a6b?');
+	height: 800px;
+	background-size: cover;
+	/*padding-top: 5%;*/
+}
+
+p{
+	font-size: 2.0em;
+}
+
+.me{
+	height: 350px;
+}
+
+
+
+
