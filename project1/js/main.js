@@ -1,20 +1,3 @@
-/*
-var todo = document.querySelector( '#todolist' ),
-    form = document.querySelector( 'form' ),
-    field = document.querySelector( '#newitem' );
-
-
-function todoList() {
-	todo.innerHTML +=  '<li>' + todoItem.value.property <img src="img/redx.png"  class="redx"> + '</li>';
-	todo.
-};
-
-    form.addEventListener( 'submit', function( ev ) {
-    todo.innerHTML += '<li>' + field.value + '</li>';
-*/
-
-
-
 function removeItem() {
 		var t = event.target;
 		var tx = t.parentNode;
@@ -23,10 +6,6 @@ function removeItem() {
 			tx.parentNode.removeChild(tx);
 			txx.parentNode.removeChild(txx);
 	};
-
-
-
-
 function todoList() {
 	var item = document.getElementById("todoItem").value;
 	var text = document.createTextNode(item);
@@ -43,16 +22,6 @@ function todoList() {
 	document.getElementById("todoList").appendChild(newItem);
 	document.getElementById("todoItem").value = '';
 }; 
-
-
-/*
-var redx = document.querySelector(".redx");
-redx.addEventListener("click", function(){
-	;
-});
-*/
-
-
 /*
 function todoList() {
 	var item = document.getElementById("todoItem").value;
@@ -64,27 +33,12 @@ function todoList() {
 	newItem.appendChild(text);
 	document.getElementById("todoList").appendChild(newItem);
 }; */
-
-
-/*
-document.getElementById("testrun").addEventListener("click", function(){ 
-	alert(this.id+" : mouse-click makes script run");
-}); 
-*/
-
-
 /*
 var button = document.querySelector("#submitbutton");
 button.addEventListener("click", function(event){
 	addItem(document.getElementById("todoItem").value);
 	console.log(document.getElementById("todoItem").value);
 });
-*/
-// events, 
-// DOM,
-// 
-
-
 /*
 function todoList() {
 	var item = document.getElementById("todoInput").value;
@@ -94,9 +48,7 @@ function todoList() {
 	document.getElementById("todoList").appendChild(newItem);
 }; 
 */
-
 //document.write(JSON.stringify(myList));
-
 /*
 (function(){
 
