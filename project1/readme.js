@@ -358,62 +358,7 @@ function addListeners() {
 // To-do List App - JavaScript Tutorial for Beginners
 // by Easy Learn Tutorial
 
--------------------------------------------------------------------------------
-tryjQuery - codeSchool Chapter 4
--------------------------------------------------------------------------------
-$(document).ready(function(){
-	$('confirmation').on('click', 'button', function(){
-		$(this).closest('.confirmation').find('.ticket').slideDown();
-	});
-});
-// note the .closest and the .find
-// .closest take you back up to the parent, and the .find takes you back down
-// and searches in the other children.
---Refactoring Handler functions--
-$(document).ready(function(){
-	$('.confirmation').on('click', 'button', function(){
-		$(this).closest('.confirmation').find('.ticket').slideDown();
-	});
-		$(this).closest('.confirmation').find('.ticket').slideDown();
-	});
-});
-//make a function
-function showTicket() {
-	$(this).closest('.confirmation').find('.ticket').slideDown();
-}
-//now combine them
-function showTicket() {
-	$(this).closest('.confirmation').find('.ticket').slideDown();
-}
-$(document).ready(function(){
-	$('.confirmation').on('click', 'button', showTicket);
-	$('.confirmation').on('mouseenter', 'h3', showTicket);
-});
--------------------------------------------------------------------------------
-Keyboard and Form Events 4.12
--------------------------------------------------------------------------------
-Keyboard Events 
-	- keypress
-	- keydown
-	- keyup
-Form Events 
-	- blur
-	- focus
-	- select
-	- submit 
-	- change
--------------------------------------------------------------------------------
---Writing our Event Handler 4.12 --
-$(document).ready(function(){
-	$('.vacation').on('keyup', '.quantity', function(){
-		// Get the price for this vacation
-		// Get the quantity entered
-		// Set the total to price + quantity
-	});
-});
-var price = $(this).closest('vacation').data('price'); --> '399.99'
-var price = +$(this).closest('vacation').data('price'); --> 399.99
-	!!!!!! //Use the + to convert the string to a number
+
 
 ----------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------
@@ -431,6 +376,45 @@ if you want everything, use .querySelectorAll
 //lets goto youtube
 
 //.querySelector replaces .getElementsByClassName .getElementsByTagName .getElementById
+-----https://www.youtube.com/watch?v=W3EK4MlZW4g
+//Javascript Selectors - Javascript Tutorial for Beginners With Examples
+//LearnCode.academy
+--WOW--
+document.getElementsByTagName // returns an Array
+so document.getElementsByTagName('h1')
+	---> [ <h1> JavaScript Selectors </h1> ]
+	// so, because it's an Array, you can do 
+	document.getElementsByTagName('h1')[0]
+	---> and that will get you the first index of the array
+but document.getElementById('checklist')
+	// will only get you
+	<ul id='checklist'></ul>
+	//so not an Array
+document.querySelector
+document.querySelectorAll
+	//now you can use any selector you want, such as
+	ie 
+	document.querySelector('.done');
+	document.querySelector('#checklist');
+		!!! //but it will only give you the first thing that shows up
+		//if I want everything, use querySelectorAll
+
+.classList
+	ie // li.classList or div.classList
+	//it displays all the class
+	li.classList
+	---> ['done', 'also', 'special']
+
+then you can add a classList
+	li.classList.add('new')
+	li.classList.remove('new')
+
+li.parentElement
+li.parentElement.parentElement
+li.parentElement.children
+li.parentElement.children[0].innerHTML = "Fruit"
+
+----------------------------------------------------------
 -----https://www.youtube.com/watch?v=W3EK4MlZW4g
 //Javascript Selectors - Javascript Tutorial for Beginners With Examples
 //LearnCode.academy
@@ -531,8 +515,11 @@ Now, for the afternoon, I need to do 2 things
 HOLY SHIT i did it. Its Tuesday night, sometime between 5:30pm and 6:30pm, 1 day ahead of schedule
 Worked for 8 hours per day for 2 days straights, super tired, super strung out, and yet very focused.
 and I was able to complete the basic tasks I laid out on Thursday of last week. 
-Damn that was exciting when it got done. That was alot of fun in the end. But also, coding 8 hours a day. 
-Thats kind of a crystal globe of things to come. Theres lots of effort to be put in everyday. 
+Damn that was exciting when it got done. Had a big smile on my face. That was alot of fun in the end. 
+But also, coding 8 hours a day. Thats kind of a crystal globe of things to come. Theres lots of effort to be put in everyday. 
+It takes alot of effort. Can I do this for 3-6 months? I mean, sure, I can. Do I want to do it at a bootcamp or in Taiwan?
+Well, lets not think about it yet. You dont have to decide yet. I guess more the question is, How can you
+keep learning by yourself? What are your next steps? Do you need theory or projects? Trust yourself. 
 
-
+-----
 
