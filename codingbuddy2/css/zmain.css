@@ -27,11 +27,6 @@ h2{
 	text-align: center;
 }
 
-h4{
-    font-family:LobsterTwo-Italic;
-      src: url(../fonts/LobsterTwo-Italic.ttf) format('truetype');
-}
-
 .main-btn{
 	background-color: white;
 }
