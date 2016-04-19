@@ -96,18 +96,19 @@ img.device-small {
 
 /* line 36, ../scss/base/_base.scss */
 #jumbotron-custom {
-  background: url("../img/bg.png") no-repeat center center;
-  height: 500px;
-  width: 100%;
+  background: url("../img/taipei4.png") no-repeat center center;
+  /*background-color: red;*/
+  /*height:500px;
+  width:100%;*/
 }
 
-/* line 42, ../scss/base/_base.scss */
+/* line 43, ../scss/base/_base.scss */
 img.group-img {
   height: 60px;
   width: 60px;
 }
 
-/* line 47, ../scss/base/_base.scss */
+/* line 48, ../scss/base/_base.scss */
 img.img-group {
   height: 50px;
   width: 50px;
