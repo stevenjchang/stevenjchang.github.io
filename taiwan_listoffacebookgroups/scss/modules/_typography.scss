@@ -1,0 +1,156 @@
+/* Typography - Lists 
+
+*/
+
+.list{
+	margin-bottom:30px;
+}
+
+.ol-w-line{
+	@extend .list;
+	margin:0;
+	padding:0;
+	width:80%;
+
+	li{
+		/* line-height:0.3em; */
+		font-size: 10px;
+		@include add-border(1px, #cccccc, bottom); 
+	}
+
+	a{
+		font-size: 15px;
+		color:darken(#00aff0, 05%);
+		/* line-height:2.4em; */
+		/* @include add-border(1px, #cccccc, bottom); */
+	}
+
+	li:last-child{
+		border:0;
+	}
+
+	span{
+		vertical-align: top;
+		padding-top: 9px;
+		font-size: 120%;
+	}
+
+	i{
+		margin-top:9px;
+		margin-right:5px;
+	}
+}
+
+.fa-2{
+	font-size: 18px;
+}
+.fa-3{
+	font-size:24px;
+}
+.fa-4{
+	font-size: 27px;
+}
+.fa-5{
+	font-size: 35px;
+}
+.fa-6{
+	font-size: 40px;
+}
+
+.fa-primary{
+	color:$primary-color;
+}
+.fa-border{
+	@include add-border(1px, $primary-color, all);
+	@include border-radius(5px);
+	padding: 15px;
+	width: 70px;
+	margin-bottom:10px;
+}
+
+.heading-primary{
+	color:$primary-color;
+}
+.heading-secondary{
+	color:$secondary-color;
+}
+.heading-light{
+	color:$light-color;
+}
+.heading-dark{
+	color:$dark-color;
+}
+
+.h2-1{
+	color:$facebook-color;
+
+}
+
+.page1{
+	p{
+		color:black !important;
+	}
+}
+
+#corner-text{
+	font-family: $font06;
+	font-size: 32px;
+}
+
+/* ---------this is from YouTube Responsive Web Design, building the side-bar, steve-sidebar */
+#logo{
+	margin-bottom: 15px;
+}
+.sb-item{
+	height: 34px;
+	list-style-type: none;
+	margin-bottom: 21px;
+}
+.sb-icon-list{
+	margin-bottom: 60px;
+}
+.first-sb{
+	background: url('../img/img1.png') bottom left no-repeat;
+}
+.second-sb{
+	background: url('../img/img1.png') bottom left no-repeat;
+}
+.third-sb{
+	background: url('../img/img1.png') bottom left no-repeat;
+}
+.fourth-sb{
+	background: url('../img/img1.png') bottom left no-repeat;
+}
+.fifth-sb{
+	background: url('../img/img1.png') bottom left no-repeat;
+}
+.list-span{
+	display: inline-block;
+	padding-left: 45px;
+	padding-top: 4px;
+	font-size: 1.4em;
+}
+#social-title{
+	display: block;
+	border-bottom: 1px dashed #221F51;
+	width: 143px;
+	padding-bottom: 5px;
+	margin-bottom: 10px;
+}
+.social-icons{
+	padding-right: 7px;
+}
+aside{
+	float: left;
+	margin-right: 35px;
+}
+
+
+
+
+
+
+
+
+
+

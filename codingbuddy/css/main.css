@@ -1,14 +1,24 @@
+/* I added this from http://learn.shayhowe.com/html-css/setting-backgrounds-and-gradients/ */
+body {
+  background: #293f50;
+  color: #628780;
+  font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/* just the above */
+
 .nav {
-	color: white;
+	color: #628780;
 }
 
 .navbar-inverse .navbar-nav li a{
-	color: white;
+	color: #406381;
 }
 
 .navbar-inverse {
-	background-color: #544E4E;
-	/*background-color: #DA6200;*/
+	/*background-color: #544E4E;
+	background-color: #DA6200;
+    background-color: #888; */
+    background-color: #283F51;
 }
 
 #main-container{
@@ -38,7 +48,12 @@ h4{
 
 #page2 li{
 	font-size: 20px;
+    color: #628780;
 
+}
+
+.float {
+    float: left;
 }
 /*
 #selfhelpguide{
@@ -74,7 +89,8 @@ ol
 body, html {
     height: 100%;
     background-repeat: no-repeat;
-    background-color: #C7C4C4;
+    background-color: #293f50;
+    /* #C7C4C4; */
     /*background-color: #003D78;*/
 
 }
@@ -208,3 +224,11 @@ body, html {
 .forgot-password:focus{
     color: #004e99;
 }
+
+/* I added this from http://learn.shayhowe.com/html-css/setting-backgrounds-and-gradients/ */
+body {
+  background: #293f50;
+  color: #888;
+  font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/* just the above */

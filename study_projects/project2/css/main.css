@@ -1,0 +1,38 @@
+.nav li {
+  display: inline;
+}
+
+.navbar-inverse .navbar-nav>li>a{
+	color: silver;
+}
+
+.navbar img{
+
+}
+
+/*.jumbotron{
+	background-color: #8E2626;
+	color: #fff;
+}*/
+
+ .jumbotron {
+  /* background-image:url('http://goo.gl/04j7Nn'); */
+  /* background-image:url("http://stevenjchang.github.io/airbnb/bg.png"); */ 
+  background-image: url("../img/taipei101.jpg");
+  /* height: 500px; */
+  background-repeat: no-repeat;
+  background-size: cover;
+} 
+
+#page1 {
+	background-image: url("../img/taipei101.jpg");
+	height: 900px;
+}
+
+#brand a{
+  color:white;
+}
+
+#brand{
+  color:white;
+}

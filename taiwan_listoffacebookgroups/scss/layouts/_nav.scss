@@ -1,0 +1,42 @@
+/* Navbar */
+
+
+.navbar{
+	width:100%;
+	margin:auto;
+	@include add-border(1px, #e7e7e7, 'right-left');
+	border-color:#e7e7e7;
+	min-height:60px;
+	background:#3b5998;
+	margin-bottom:25px;
+	
+	a.a-lg-font{
+		color:white !important;
+		font-size:20px;
+		letter-spacing:-0.5px;
+		padding-bottom:24px !important;
+		padding-top:20px !important;
+	}
+	a.navbar-brand{
+		color:white;
+
+	}
+	
+}
+
+.dropdown-menu>li>a{
+	color:white;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus{
+	background:#3b5998 !important;
+	color:#fff !important;
+}
+.dropdown-menu{
+	background-color: $facebook-color !important;
+	margin: 1px;
+
+	li{
+		padding: 3px !important;
+	}
+}
