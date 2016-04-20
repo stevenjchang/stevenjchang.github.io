@@ -97,7 +97,6 @@ img.device-small {
   color: white;
   min-height: 400px;
   margin-top: 0px;
-  margin-bottom: 8px;
 }
 
 /* line 47, ../scss/base/_base.scss */
@@ -221,71 +220,77 @@ img.img-group {
 #h2-1 {
   color: #3b5998;
   text-align: center;
-  margin-top: 25px;
+  margin-top: 20px;
 }
 
 /* line 89, ../scss/modules/_typography.scss */
 #h2-2 {
   color: white;
   text-align: center;
-  margin-top: 25px;
+  /*margin-top: 20px;*/
+  margin-bottom: 35px;
 }
 
-/* line 96, ../scss/modules/_typography.scss */
+/* line 95, ../scss/modules/_typography.scss */
+.b-cate {
+  margin-bottom: 10px;
+}
+
+/* line 100, ../scss/modules/_typography.scss */
 .page1 p {
   color: black !important;
 }
 
-/* line 101, ../scss/modules/_typography.scss */
+/* line 105, ../scss/modules/_typography.scss */
 #corner-text {
   font-family: "Damion", cursive;
   font-size: 32px;
 }
 
 /* ---------this is from YouTube Responsive Web Design, building the side-bar, steve-sidebar */
-/* line 107, ../scss/modules/_typography.scss */
+/* line 111, ../scss/modules/_typography.scss */
 #logo {
   margin-bottom: 15px;
 }
 
-/* line 110, ../scss/modules/_typography.scss */
+/* line 114, ../scss/modules/_typography.scss */
 .sb-item {
   height: 34px;
   list-style-type: none;
   margin-bottom: 21px;
 }
 
-/* line 115, ../scss/modules/_typography.scss */
+/* line 119, ../scss/modules/_typography.scss */
 .sb-icon-list {
   margin-bottom: 60px;
 }
 
-/* line 118, ../scss/modules/_typography.scss */
+/* line 122, ../scss/modules/_typography.scss */
 .first-sb {
   background: url("../img/img1.png") bottom left no-repeat;
 }
 
-/* line 121, ../scss/modules/_typography.scss */
+/* line 125, ../scss/modules/_typography.scss */
 .second-sb {
   background: url("../img/img1.png") bottom left no-repeat;
 }
 
-/* line 124, ../scss/modules/_typography.scss */
+/* line 128, ../scss/modules/_typography.scss */
 .third-sb {
   background: url("../img/img1.png") bottom left no-repeat;
 }
 
-/* line 127, ../scss/modules/_typography.scss */
+/* line 131, ../scss/modules/_typography.scss */
 .fourth-sb {
   background: url("../img/img1.png") bottom left no-repeat;
 }
 
-/* line 130, ../scss/modules/_typography.scss */
+/* line 134, ../scss/modules/_typography.scss */
 .fifth-sb {
   background: url("../img/img1.png") bottom left no-repeat;
 }
 
-/* line 133, ../scss/modules/_typography.scss */
+/* line 137, ../scss/modules/_typography.scss */
 .list-span {
   display: inline-block;
   padding-left: 45px;
@@ -293,7 +298,7 @@ img.img-group {
   font-size: 1.4em;
 }
 
-/* line 139, ../scss/modules/_typography.scss */
+/* line 143, ../scss/modules/_typography.scss */
 #social-title {
   display: block;
   border-bottom: 1px dashed #221F51;
@@ -302,12 +307,12 @@ img.img-group {
   margin-bottom: 10px;
 }
 
-/* line 146, ../scss/modules/_typography.scss */
+/* line 150, ../scss/modules/_typography.scss */
 .social-icons {
   padding-right: 7px;
 }
 
-/* line 149, ../scss/modules/_typography.scss */
+/* line 153, ../scss/modules/_typography.scss */
 aside {
   float: left;
   margin-right: 35px;
