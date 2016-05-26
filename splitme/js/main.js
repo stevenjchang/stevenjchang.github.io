@@ -16,15 +16,11 @@ var calcSplit = function(){
 	var totalDisplay = document.getElementById('totalDisplay');
 	var tipOnlyDisplay = document.getElementById('tipOnlyDisplay');
 	totalDisplay.setAttribute('class', 'show');
-	tipOnlyDisplay.setAttribute('class', 'show');
-
-	return document.getElementById('payAmount').innerHTML = total * (1+percent) / people;
-}
-
-var tryThis = function(){
-	document.getElementById('payAmount').innerHTML = calcSplit;
+	/*tipOnlyDisplay.setAttribute('class', 'show');*/
+	var newTotal = total * (1+percent) / people;
+	return document.getElementById('payAmount').innerHTML = Math.round(newTotal * 100)/100;
 }
 
 document.getElementById('totalDisplay').setAttribute('class', 'dontshow');
-document.getElementById('tipOnlyDisplay').setAttribute('class', 'dontshow');
+/*document.getElementById('tipOnlyDisplay').setAttribute('class', 'dontshow');*/
 document.getElementById('submit').onclick = function() { calcSplit(); };
