@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title> insert title </title>
+    <title>Split Me! </title>
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -16,8 +16,37 @@
   <body>
 
     <header>
+      <h1>Tip & Bill Split Calculator</h1>
         
     </header>
+    
+    <!-- Give me the run down:
+
+    Total Bill Amount (tax + tip) (input box)
+    Number of people
+    Tax Percentage
+
+    = >
+    Each person pays ___
+    Each person pays ___ in tip -->
+    
+  
+
+    <p>How much was your bill?<br><input type='text' id='billTotal'></p>
+    <p>How many people are sharing the bill?<br><input type='text' id='people'></p>
+    <p>How much do you want to tip?<br><input type='dropdown' id='tipPercent'></p>
+    <br>
+    <button class='btn' type='submit' id='submit'>Calculate</button>
+    <br>
+    <p id='totalDisplay'>Each person will pay<span id='payAmount'></span></p>
+    <!--<p id='tipOnlyDisplay'>Each person pays ___ in tip</p>-->
+    <br>
+    
+
+
+
+
       
   </body>
+  <script src="js/main.js"></script>
 </html>
