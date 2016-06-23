@@ -21,6 +21,7 @@
     <link rel='stylesheet' type='text/css' media='only screen and (min-width:768px) and (max-width:980px)' href='css/main768.css'>
     <link rel='stylesheet' type='text/css' media='only screen and (min-width:600px) and (max-width:767px)' href='css/main600.css'>
     <link rel='stylesheet' type='text/css' media='only screen and (min-width:300px) and (max-width:599px)' href='css/main300.css'>
+    <style> .blue-btn{color: blue};</style>
   </head>
 
   <body>
@@ -123,7 +124,7 @@
             <!--<img class='img-main' src="img/taipei101.jpg">-->
             
               <p style="text-align:center; font-size:26px; color:red">
-                <button type="button" class="btn btn-default btn-md b-cate">Events and Adventures</button>
+                <button type="button" class="btn btn-default btn-md b-cate" id='sect-btn1'>Events and Adventures</button>
                 <button type="button" class="btn btn-default btn-md b-cate">Buy and Sell</button>
                 <button type="button" class="btn btn-default btn-md b-cate">Jobs and Teaching</button>
                 <button type="button" class="btn btn-default btn-md b-cate">Language Exchange</button>
@@ -154,7 +155,7 @@
     </div>-->
 
     <!--1 Events and Activities-->
-    <section class='page1 container-fluid'>
+    <section class='page1 container-fluid' id='page1'>
       <div class='col-md-6 col-sm-7 col-md-xs-12 col-md-offset-2 col-sm-offset-2'>
         <h1>Events and Adventures</h1>
         <ul class='ol-w-line'>
@@ -361,6 +362,21 @@
     <script src="js/jquery.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script src="js/bootstrap.js"></script>
+    
+    <!-- jQuery function -->
+    <script>
+
+    $(function(){
+
+      $('#sect-btn1').on('click', function(){
+        $('#page1').slideToggle(300);
+        $(this).toggleClass('blue-btn');
+      })
+
+    });
+
+
+    </script>
 
   </body>
 </html>
