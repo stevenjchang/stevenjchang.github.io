@@ -1025,14 +1025,13 @@
                 console.log(testArr);
             } 
             else if (testArr[0] >= 0 && testArr[0] <=20 && testArr[1] >= 0 && testArr[1] <= 20) {
-                clearTimeout(timeoutController);
                 snakeArray.unshift(current_key(testArr));
                 snakeArray.pop();
                 // current_key(testArr)
                 console.log("testArr = "+testArr+" snakeArray = "+snakeArray);
 
 
-                
+                clearTimeout(timeoutController);
                 // $(displaySnakePos(testArr)).addClass('turnRed');
                 timeoutController = setTimeout(pageRender, 4000);
                 // console.log(testArr);
