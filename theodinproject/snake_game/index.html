@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title> snake_game </title>
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        
+        <!-- Custom styles for this template -->
+        
+        <link href="main.css" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Oregano:400,400italic|Codystar:400,300|Tangerine:400,700|Great+Vibes|Yellowtail|Damion|Nothing+You+Could+Do|La+Belle+Aurore|Vampiro+One' rel='stylesheet' type='text/css'>
+  </head>
+<body>
+    <header class='center'>
+        <h1>Snake Game</h1>
+    </header>
+    <div class='center'>
+        <button id='create_table'>
+            Create Table</button>
+    </div>
+    <div class='center'>
+        <button id="up">Up</button>
+        <button id="down">Down</button>
+        <button id="left">Left</button>
+        <button id="right">Right</button>
+    </div>
+    <div id="div_main_table">
+        <!-- div#div_main_table>table#main_table>tr#row$.tRow*20>td#box$.tSquare*20 -->
+        <table id="main_table">
+            <tr id="row1" class="tRow">
+                <td id="box1" class="tSquare"></td>
+                <td id="box2" class="tSquare"></td>
+                <td id="box3" class="tSquare"></td>
+                <td id="box4" class="tSquare"></td>
+                <td id="box5" class="tSquare"></td>
+                <td id="box6" class="tSquare"></td>
+                <td id="box7" class="tSquare"></td>
+                <td id="box8" class="tSquare"></td>
+                <td id="box9" class="tSquare"></td>
+                <td id="box10" class="tSquare"></td>
+                <td id="box11" class="tSquare"></td>
+                <td id="box12" class="tSquare"></td>
+                <td id="box13" class="tSquare"></td>
+                <td id="box14" class="tSquare"></td>
+                <td id="box15" class="tSquare"></td>
+                <td id="box16" class="tSquare"></td>
+                <td id="box17" class="tSquare"></td>
+                <td id="box18" class="tSquare"></td>
+                <td id="box19" class="tSquare"></td>
+                <td id="box20" class="tSquare"></td>
+            </tr>
+            <tr id="row2" class="tRow">
+                <td id="box1" class="tSquare"></td>
+                <td id="box2" class="tSquare"></td>
+                <td id="box3" class="tSquare"></td>
+                <td id="box4" class="tSquare"></td>
+                <td id="box5" class="tSquare"></td>
+                <td id="box6" class="tSquare"></td>
+                <td id="box7" class="tSquare"></td>
+                <td id="box8" class="tSquare"></td>
+                <td id="box9" class="tSquare"></td>
+                <td id="box10" class="tSquare"></td>
+                <td id="box11" class="tSquare"></td>
+                <td id="box12" class="tSquare"></td>
+                <td id="box13" class="tSquare"></td>
+                <td id="box14" class="tSquare"></td>
+                <td id="box15" class="tSquare"></td>
+                <td id="box16" class="tSquare"></td>
+                <td id="box17" class="tSquare"></td>
+                <td id="box18" class="tSquare"></td>
+                <td id="box19" class="tSquare"></td>
+                <td id="box20" class="tSquare"></td>
+            </tr>
+            <tr id="row3" class="tRow">
+                <td id="box1" class="tSquare"></td>
+                <td id="box2" class="tSquare"></td>
+                <td id="box3" class="tSquare"></td>
+                <td id="box4" class="tSquare"></td>
+                <td id="box5" class="tSquare"></td>
+                <td id="box6" class="tSquare"></td>
+                <td id="box7" class="tSquare"></td>
+                <td id="box8" class="tSquare"></td>
+                <td id="box9" class="tSquare"></td>
+                <td id="box10" class="tSquare"></td>
+                <td id="box11" class="tSquare"></td>
+                <td id="box12" class="tSquare"></td>
+                <td id="box13" class="tSquare"></td>
+                <td id="box14" class="tSquare"></td>
+                <td id="box15" class="tSquare"></td>
+                <td id="box16" class="tSquare"></td>
+                <td id="box17" class="tSquare"></td>
+                <td id="box18" class="tSquare"></td>
+                <td id="box19" class="tSquare"></td>
+                <td id="box20" class="tSquare"></td>
+            </tr>
+            <tr id="row4" class="tRow">
+                <td id="box1" class="tSquare"></td>
+                <td id="box2" class="tSquare"></td>
+                <td id="box3" class="tSquare"></td>
+                <td id="box4" class="tSquare"></td>
+                <td id="box5" class="tSquare"></td>
+                <td id="box6" class="tSquare"></td>
+                <td id="box7" class="tSquare"></td>
+                <td id="box8" class="tSquare"></td>
+                <td id="box9" class="tSquare"></td>
+                <td id="box10" class="tSquare"></td>
+                <td id="box11" class="tSquare"></td>
+                <td id="box12" class="tSquare"></td>
+                <td id="box13" class="tSquare"></td>
+                <td id="box14" class="tSquare"></td>
+                <td id="box15" class="tSquare"></td>
+                <td id="box16" class="tSquare"></td>
+                <td id="box17" class="tSquare"></td>
+                <td id="box18" class="tSquare"></td>
+                <td id="box19" class="tSquare"></td>
+                <td id="box20" class="tSquare"></td>
+            </tr>
+            <tr id="row5" class="tRow">
+                <td id="box1" class="tSquare"></td>
+                <td id="box2" class="tSquare"></td>
+                <td id="box3" class="tSquare"></td>
+                <td id="box4" class="tSquare"></td>
+                <td id="box5" class="tSquare"></td>
+                <td id="box6" class="tSquare"></td>
+                <td id="box7" class="tSquare"></td>
+                <td id="box8" class="tSquare"></td>
+                <td id="box9" class="tSquare"></td>
+                <td id="box10" class="tSquare"></td>
+                <td id="box11" class="tSquare"></td>
+                <td id="box12" class="tSquare"></td>
+                <td id="box13" class="tSquare"></td>
+                <td id="box14" class="tSquare"></td>
+                <td id="box15" class="tSquare"></td>
+                <td id="box16" class="tSquare"></td>
+                <td id="box17" class="tSquare"></td>
+                <td id="box18" class="tSquare"></td>
+                <td id="box19" class="tSquare"></td>
+                <td id="box20" class="tSquare"></td>
+            </tr>
+            <tr id="row6" class="tRow">
+                <td id="box1" class="tSquare"></td>
+                <td id="box2" class="tSquare"></td>
+                <td id="box3" class="tSquare"></td>
+                <td id="box4" class="tSquare"></td>
+                <td id="box5" class="tSquare"></td>
+                <td id="box6" class="tSquare"></td>
+                <td id="box7" class="tSquare"></td>
+                <td id="box8" class="tSquare"></td>
+                <td id="box9" class="tSquare"></td>
+                <td id="box10" class="tSquare"></td>
+                <td id="box11" class="tSquare"></td>
+                <td id="box12" class="tSquare"></td>
+                <td id="box13" class="tSquare"></td>
+                <td id="box14" class="tSquare"></td>
+                <td id="box15" class="tSquare"></td>
+                <td id="box16" class="tSquare"></td>
+                <td id="box17" class="tSquare"></td>
+                <td id="box18" class="tSquare"></td>
+                <td id="box19" class="tSquare"></td>
+                <td id="box20" class="tSquare"></td>
+            </tr>
+            <tr id="row7" class="tRow">
+                <td id="box1" class="tSquare"></td>
+                <td id="box2" class="tSquare"></td>
+                <td id="box3" class="tSquare"></td>
+                <td id="box4" class="tSquare"></td>
+                <td id="box5" class="tSquare"></td>
+                <td id="box6" class="tSquare"></td>
+                <td id="box7" class="tSquare"></td>
+                <td id="box8" class="tSquare"></td>
+                <td id="box9" class="tSquare"></td>
+                <td id="box10" class="tSquare"></td>
+                <td id="box11" class="tSquare"></td>
+                <td id="box12" class="tSquare"></td>
+                <td id="box13" class="tSquare"></td>
+                <td id="box14" class="tSquare"></td>
+                <td id="box15" class="tSquare"></td>
+                <td id="box16" class="tSquare"></td>
+                <td id="box17" class="tSquare"></td>
+                <td id="box18" class="tSquare"></td>
+                <td id="box19" class="tSquare"></td>
+                <td id="box20" class="tSquare"></td>
+            </tr>
+            <tr id="row8" class="tRow">
+                <td id="box1" class="tSquare"></td>
+                <td id="box2" class="tSquare"></td>
+                <td id="box3" class="tSquare"></td>
+                <td id="box4" class="tSquare"></td>
+                <td id="box5" class="tSquare"></td>
+                <td id="box6" class="tSquare"></td>
+                <td id="box7" class="tSquare"></td>
+                <td id="box8" class="tSquare"></td>
+                <td id="box9" class="tSquare"></td>
+                <td id="box10" class="tSquare"></td>
+                <td id="box11" class="tSquare"></td>
+                <td id="box12" class="tSquare"></td>
+                <td id="box13" class="tSquare"></td>
+                <td id="box14" class="tSquare"></td>
+                <td id="box15" class="tSquare"></td>
+                <td id="box16" class="tSquare"></td>
+                <td id="box17" class="tSquare"></td>
+                <td id="box18" class="tSquare"></td>
+                <td id="box19" class="tSquare"></td>
+                <td id="box20" class="tSquare"></td>
+            </tr>
+            <tr id="row9" class="tRow">
+                <td id="box1" class="tSquare"></td>
+                <td id="box2" class="tSquare"></td>
+                <td id="box3" class="tSquare"></td>
+                <td id="box4" class="tSquare"></td>
+                <td id="box5" class="tSquare"></td>
+                <td id="box6" class="tSquare"></td>
+                <td id="box7" class="tSquare"></td>
+                <td id="box8" class="tSquare"></td>
+                <td id="box9" class="tSquare"></td>
+                <td id="box10" class="tSquare"></td>
+                <td id="box11" class="tSquare"></td>
+                <td id="box12" class="tSquare"></td>
+                <td id="box13" class="tSquare"></td>
+                <td id="box14" class="tSquare"></td>
+                <td id="box15" class="tSquare"></td>
+                <td id="box16" class="tSquare"></td>
+                <td id="box17" class="tSquare"></td>
+                <td id="box18" class="tSquare"></td>
+                <td id="box19" class="tSquare"></td>
+                <td id="box20" class="tSquare"></td>
+            </tr>
+            <tr id="row10" class="tRow">
+                <td id="box1" class="tSquare"></td>
+                <td id="box2" class="tSquare"></td>
+                <td id="box3" class="tSquare"></td>
+                <td id="box4" class="tSquare"></td>
+                <td id="box5" class="tSquare"></td>
+                <td id="box6" class="tSquare"></td>
+                <td id="box7" class="tSquare"></td>
+                <td id="box8" class="tSquare"></td>
+                <td id="box9" class="tSquare"></td>
+                <td id="box10" class="tSquare"></td>
+                <td id="box11" class="tSquare"></td>
+                <td id="box12" class="tSquare"></td>
+                <td id="box13" class="tSquare"></td>
+                <td id="box14" class="tSquare"></td>
+                <td id="box15" class="tSquare"></td>
+                <td id="box16" class="tSquare"></td>
+                <td id="box17" class="tSquare"></td>
+                <td id="box18" class="tSquare"></td>
+                <td id="box19" class="tSquare"></td>
+                <td id="box20" class="tSquare"></td>
+            </tr>
+            <tr id="row11" class="tRow">
+                <td id="box1" class="tSquare"></td>
+                <td id="box2" class="tSquare"></td>
+                <td id="box3" class="tSquare"></td>
+                <td id="box4" class="tSquare"></td>
+                <td id="box5" class="tSquare"></td>
+                <td id="box6" class="tSquare"></td>
+                <td id="box7" class="tSquare"></td>
+                <td id="box8" class="tSquare"></td>
+                <td id="box9" class="tSquare"></td>
+                <td id="box10" class="tSquare"></td>
+                <td id="box11" class="tSquare"></td>
+                <td id="box12" class="tSquare"></td>
+                <td id="box13" class="tSquare"></td>
+                <td id="box14" class="tSquare"></td>
+                <td id="box15" class="tSquare"></td>
+                <td id="box16" class="tSquare"></td>
+                <td id="box17" class="tSquare"></td>
+                <td id="box18" class="tSquare"></td>
+                <td id="box19" class="tSquare"></td>
+                <td id="box20" class="tSquare"></td>
+            </tr>
+            <tr id="row12" class="tRow">
+                <td id="box1" class="tSquare"></td>
+                <td id="box2" class="tSquare"></td>
+                <td id="box3" class="tSquare"></td>
+                <td id="box4" class="tSquare"></td>
+                <td id="box5" class="tSquare"></td>
+                <td id="box6" class="tSquare"></td>
+                <td id="box7" class="tSquare"></td>
+                <td id="box8" class="tSquare"></td>
+                <td id="box9" class="tSquare"></td>
+                <td id="box10" class="tSquare"></td>
+                <td id="box11" class="tSquare"></td>
+                <td id="box12" class="tSquare"></td>
+                <td id="box13" class="tSquare"></td>
+                <td id="box14" class="tSquare"></td>
+                <td id="box15" class="tSquare"></td>
+                <td id="box16" class="tSquare"></td>
+                <td id="box17" class="tSquare"></td>
+                <td id="box18" class="tSquare"></td>
+                <td id="box19" class="tSquare"></td>
+                <td id="box20" class="tSquare"></td>
+            </tr>
+            <tr id="row13" class="tRow">
+                <td id="box1" class="tSquare"></td>
+                <td id="box2" class="tSquare"></td>
+                <td id="box3" class="tSquare"></td>
+                <td id="box4" class="tSquare"></td>
+                <td id="box5" class="tSquare"></td>
+                <td id="box6" class="tSquare"></td>
+                <td id="box7" class="tSquare"></td>
+                <td id="box8" class="tSquare"></td>
+                <td id="box9" class="tSquare"></td>
+                <td id="box10" class="tSquare"></td>
+                <td id="box11" class="tSquare"></td>
+                <td id="box12" class="tSquare"></td>
+                <td id="box13" class="tSquare"></td>
+                <td id="box14" class="tSquare"></td>
+                <td id="box15" class="tSquare"></td>
+                <td id="box16" class="tSquare"></td>
+                <td id="box17" class="tSquare"></td>
+                <td id="box18" class="tSquare"></td>
+                <td id="box19" class="tSquare"></td>
+                <td id="box20" class="tSquare"></td>
+            </tr>
+            <tr id="row14" class="tRow">
+                <td id="box1" class="tSquare"></td>
+                <td id="box2" class="tSquare"></td>
+                <td id="box3" class="tSquare"></td>
+                <td id="box4" class="tSquare"></td>
+                <td id="box5" class="tSquare"></td>
+                <td id="box6" class="tSquare"></td>
+                <td id="box7" class="tSquare"></td>
+                <td id="box8" class="tSquare"></td>
+                <td id="box9" class="tSquare"></td>
+                <td id="box10" class="tSquare"></td>
+                <td id="box11" class="tSquare"></td>
+                <td id="box12" class="tSquare"></td>
+                <td id="box13" class="tSquare"></td>
+                <td id="box14" class="tSquare"></td>
+                <td id="box15" class="tSquare"></td>
+                <td id="box16" class="tSquare"></td>
+                <td id="box17" class="tSquare"></td>
+                <td id="box18" class="tSquare"></td>
+                <td id="box19" class="tSquare"></td>
+                <td id="box20" class="tSquare"></td>
+            </tr>
+            <tr id="row15" class="tRow">
+                <td id="box1" class="tSquare"></td>
+                <td id="box2" class="tSquare"></td>
+                <td id="box3" class="tSquare"></td>
+                <td id="box4" class="tSquare"></td>
+                <td id="box5" class="tSquare"></td>
+                <td id="box6" class="tSquare"></td>
+                <td id="box7" class="tSquare"></td>
+                <td id="box8" class="tSquare"></td>
+                <td id="box9" class="tSquare"></td>
+                <td id="box10" class="tSquare"></td>
+                <td id="box11" class="tSquare"></td>
+                <td id="box12" class="tSquare"></td>
+                <td id="box13" class="tSquare"></td>
+                <td id="box14" class="tSquare"></td>
+                <td id="box15" class="tSquare"></td>
+                <td id="box16" class="tSquare"></td>
+                <td id="box17" class="tSquare"></td>
+                <td id="box18" class="tSquare"></td>
+                <td id="box19" class="tSquare"></td>
+                <td id="box20" class="tSquare"></td>
+            </tr>
+            <tr id="row16" class="tRow">
+                <td id="box1" class="tSquare"></td>
+                <td id="box2" class="tSquare"></td>
+                <td id="box3" class="tSquare"></td>
+                <td id="box4" class="tSquare"></td>
+                <td id="box5" class="tSquare"></td>
+                <td id="box6" class="tSquare"></td>
+                <td id="box7" class="tSquare"></td>
+                <td id="box8" class="tSquare"></td>
+                <td id="box9" class="tSquare"></td>
+                <td id="box10" class="tSquare"></td>
+                <td id="box11" class="tSquare"></td>
+                <td id="box12" class="tSquare"></td>
+                <td id="box13" class="tSquare"></td>
+                <td id="box14" class="tSquare"></td>
+                <td id="box15" class="tSquare"></td>
+                <td id="box16" class="tSquare"></td>
+                <td id="box17" class="tSquare"></td>
+                <td id="box18" class="tSquare"></td>
+                <td id="box19" class="tSquare"></td>
+                <td id="box20" class="tSquare"></td>
+            </tr>
+            <tr id="row17" class="tRow">
+                <td id="box1" class="tSquare"></td>
+                <td id="box2" class="tSquare"></td>
+                <td id="box3" class="tSquare"></td>
+                <td id="box4" class="tSquare"></td>
+                <td id="box5" class="tSquare"></td>
+                <td id="box6" class="tSquare"></td>
+                <td id="box7" class="tSquare"></td>
+                <td id="box8" class="tSquare"></td>
+                <td id="box9" class="tSquare"></td>
+                <td id="box10" class="tSquare"></td>
+                <td id="box11" class="tSquare"></td>
+                <td id="box12" class="tSquare"></td>
+                <td id="box13" class="tSquare"></td>
+                <td id="box14" class="tSquare"></td>
+                <td id="box15" class="tSquare"></td>
+                <td id="box16" class="tSquare"></td>
+                <td id="box17" class="tSquare"></td>
+                <td id="box18" class="tSquare"></td>
+                <td id="box19" class="tSquare"></td>
+                <td id="box20" class="tSquare"></td>
+            </tr>
+            <tr id="row18" class="tRow">
+                <td id="box1" class="tSquare"></td>
+                <td id="box2" class="tSquare"></td>
+                <td id="box3" class="tSquare"></td>
+                <td id="box4" class="tSquare"></td>
+                <td id="box5" class="tSquare"></td>
+                <td id="box6" class="tSquare"></td>
+                <td id="box7" class="tSquare"></td>
+                <td id="box8" class="tSquare"></td>
+                <td id="box9" class="tSquare"></td>
+                <td id="box10" class="tSquare"></td>
+                <td id="box11" class="tSquare"></td>
+                <td id="box12" class="tSquare"></td>
+                <td id="box13" class="tSquare"></td>
+                <td id="box14" class="tSquare"></td>
+                <td id="box15" class="tSquare"></td>
+                <td id="box16" class="tSquare"></td>
+                <td id="box17" class="tSquare"></td>
+                <td id="box18" class="tSquare"></td>
+                <td id="box19" class="tSquare"></td>
+                <td id="box20" class="tSquare"></td>
+            </tr>
+            <tr id="row19" class="tRow">
+                <td id="box1" class="tSquare"></td>
+                <td id="box2" class="tSquare"></td>
+                <td id="box3" class="tSquare"></td>
+                <td id="box4" class="tSquare"></td>
+                <td id="box5" class="tSquare"></td>
+                <td id="box6" class="tSquare"></td>
+                <td id="box7" class="tSquare"></td>
+                <td id="box8" class="tSquare"></td>
+                <td id="box9" class="tSquare"></td>
+                <td id="box10" class="tSquare"></td>
+                <td id="box11" class="tSquare"></td>
+                <td id="box12" class="tSquare"></td>
+                <td id="box13" class="tSquare"></td>
+                <td id="box14" class="tSquare"></td>
+                <td id="box15" class="tSquare"></td>
+                <td id="box16" class="tSquare"></td>
+                <td id="box17" class="tSquare"></td>
+                <td id="box18" class="tSquare"></td>
+                <td id="box19" class="tSquare"></td>
+                <td id="box20" class="tSquare"></td>
+            </tr>
+            <tr id="row20" class="tRow">
+                <td id="box1" class="tSquare"></td>
+                <td id="box2" class="tSquare"></td>
+                <td id="box3" class="tSquare"></td>
+                <td id="box4" class="tSquare"></td>
+                <td id="box5" class="tSquare"></td>
+                <td id="box6" class="tSquare"></td>
+                <td id="box7" class="tSquare"></td>
+                <td id="box8" class="tSquare"></td>
+                <td id="box9" class="tSquare"></td>
+                <td id="box10" class="tSquare"></td>
+                <td id="box11" class="tSquare"></td>
+                <td id="box12" class="tSquare"></td>
+                <td id="box13" class="tSquare"></td>
+                <td id="box14" class="tSquare"></td>
+                <td id="box15" class="tSquare"></td>
+                <td id="box16" class="tSquare"></td>
+                <td id="box17" class="tSquare"></td>
+                <td id="box18" class="tSquare"></td>
+                <td id="box19" class="tSquare"></td>
+                <td id="box20" class="tSquare"></td>
+            </tr>
+        </table>
+    </div>
+    <div id="div_main_table" class='hidden'>
+
+        <table id="main_table">   
+        <tr id='row1' class="tRow">
+            <td id='box1' class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+        </tr>
+        <tr class="tRow">
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+        </tr>
+        <tr class="tRow">
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+        </tr>
+        <tr class="tRow">
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+        </tr>
+        <tr class="tRow">
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+        </tr>
+        <tr class="tRow">
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+        </tr>
+        <tr class="tRow">
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+        </tr>
+        <tr class="tRow">
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+        </tr>
+        <tr class="tRow">
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+        </tr>
+        <tr class="tRow">
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+        </tr>
+        <tr class="tRow">
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+        </tr>
+        <tr class="tRow">
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+        </tr>
+        <tr class="tRow">
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+        </tr>
+        <tr class="tRow">
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+        </tr>
+        <tr class="tRow">
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+        </tr>
+        <tr class="tRow">
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+        </tr>
+        <tr class="tRow">
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+        </tr>
+        <tr class="tRow">
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+        </tr>
+        <tr class="tRow">
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+        </tr>
+        <tr class="tRow">
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+            <td class="tSquare"></td>
+
+        </tr>
+        
+        </table>
+    </div>
+</body>
+                        <!-- CSS STYLE      CSS STYLE      CSS STYLE -->
+  <style>
+
+        #main_table {
+            margin: auto;
+            text-align: center;
+        }
+        .center{
+            margin: auto;
+            text-align: center;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+       th {
+            width: 100%;
+        }
+        td{
+            padding: 10px;
+        }
+        body{
+            background-color: #999999;
+        }
+        .tSquare{background-color: black; display: inline-block;}
+        .turnRed{background-color: white !important;}
+        .turnGreen{background-color: green !important;}
+  </style>
+                        <!-- JS SCRIPT      JS SCRIPT      JS SCRIPT -->
+
+  <script>
+    var randomNum = function(){
+        return Math.floor(Math.random() * 20) + 1;
+    };
+    // var snakeHead = [randomNum(), randomNum()];
+    var snakeHead = [10,10];
+    // var snakeArray = [snakeHead, [snakeHead[0],snakeHead[1]-1], [snakeHead[0],snakeHead[1]-2]];
+    var snakeArray = [[10,10],[10,9],[10,8],[10,7],[10,6],[10,5]];
+    var food = [randomNum(), randomNum()];
+
+    // rewrite this shit      rewrite this shit       rewrite this shit
+    var displaySnakePos = function (arr){
+        return "#row" + arr[0] + " #box" + arr[1];
+    };
+
+    // re-write displaySnakePos
+
+    // var displaySnakePos2 = function(arrOfArr){
+    //     arrOfArr.each(function (arr){
+    //         var rowBoxPos = "#row" + arr[0] + " #box" + arr[1];
+    //         $(rowBowPos).addClass('turnRed');
+    //     })
+    // };
+// ----------------aka--------------
+
+    var right = function(arr){
+        var newThing = arr;
+        newThing[1] += 1;
+        return newThing;
+    };
+    function left (arr){
+        var newThing2 = arr;
+        newThing2[1] -= 1;
+        return newThing2;
+    };
+    function up (arr){
+        var newThing3 = arr;
+        newThing3[0] -= 1;
+        return newThing3;
+    };
+    var down = function(arr){
+        var newThing4 = arr;
+        newThing4[0] += 1;
+        return newThing4;
+    };
+    var current_key = right();
+    var timeoutController = "";
+    
+                                // JQUERY      JQUERY      JQUERY
+
+    $(function(){
+        $(displaySnakePos(food)).addClass('turnGreen');
+
+        var pageRender = function(){
+            var displaySnakePos2 = function(arrOfArr){
+                $('.turnRed').removeClass('turnRed');
+                    for (var i=0;i<arrOfArr.length;i++){
+                        var rowBowPos = "#row" + arrOfArr[i][0] + " #box" + arrOfArr[i][1];
+                        // console.log(rowBowPos);
+                        console.log(rowBowPos);
+                        $(rowBowPos).addClass('turnRed');
+                    }
+                };
+            if  (snakeHead[0] == food[0] && snakeHead[1] == food[1]) {
+                $(displaySnakePos(food)).removeClass('turnGreen');
+                food = [randomNum(), randomNum()];
+                $(displaySnakePos(food)).addClass('turnGreen');
+                clearTimeout(timeoutController);
+                current_key(snakeHead);
+                $(displaySnakePos(snakeHead)).addClass('turnRed');
+                timeoutController = setTimeout(pageRender, 500);
+                console.log(snakeHead);
+            } 
+
+            else if (snakeHead[0] >= 0 && snakeHead[0] <=20 && snakeHead[1] >= 0 && snakeHead[1] <= 20) {
+                clearTimeout(timeoutController);
+                snakeArray.unshift(current_key(snakeHead));
+                snakeArray.pop();
+                displaySnakePos2(snakeArray);
+                console.log("snakeHead = "+snakeHead+" snakeArray = "+snakeArray);
+            } 
+
+            else {
+                $('.turnRed').removeClass('turnRed');
+                snakeHead = [10, 10];
+                clearTimeout(timeoutController);
+                current_key(snakeHead);
+                $(displaySnakePos(snakeHead)).addClass('turnRed');
+                timeoutController = setTimeout(pageRender, 500);
+                console.log(snakeHead);
+            }
+        };
+
+                            // KEY DOWN      KEY DOWN       KEY DOWN
+        $('body').keydown(function (e) {
+            // debugger;
+            var code = e.keyCode || e.which;
+            
+            if (code == 38) {
+                e.preventDefault();
+                if (current_key != up && current_key != down){
+                    current_key = up;
+                    pageRender();
+                }
+            } else if (code === 40){
+                e.preventDefault();
+                if (current_key != down && current_key != up){
+                    current_key = down;
+                    pageRender();
+                }
+            } else if (code === 37){
+                e.preventDefault();
+                if (current_key != left && current_key != right){
+                    current_key = left;
+                    pageRender();
+                }
+            } else if (code === 39){
+                e.preventDefault();
+                if (current_key != right && current_key != left){
+                    current_key = right;
+                    pageRender();
+                }
+            }
+        });
+
+        
+
+
+
+
+    });
+
+    
+    
+  </script>
+</html>
+
+
+<!-- questions:
+
+2) how do you control how long it is displayed?
+3) how do things change when snake hits the food?
+4) randomize the food. create a random button
+ -->
+
+<!-- 
+
+
+
+
+<!-- 
+
+
+-----
+taken from
+https://github.com/FrankPeelen/Snake-Browser-JS/blob/master/scripts.js
+-----
+
+$(document).keydown(function(e) {
+        switch (e.which) {
+            case 37: // left
+                direction = 'left';
+            break;
+          case 38: // up
+                    direction = 'up';
+            break;
+          case 39: // right
+                    direction = 'right';
+            break;
+          case 40: // down
+                    direction = 'down';
+            break;
+          default:
+            return; // exit this handler for other keys
+            }
+            e.preventDefault(); // prevent the default action (scroll / move caret)
+        });
+
+
+
+
+-->

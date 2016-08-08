@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title> insert title </title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- Custom styles for this template -->
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Oregano:400,400italic|Codystar:400,300|Tangerine:400,700|Great+Vibes|Yellowtail|Damion|Nothing+You+Could+Do|La+Belle+Aurore|Vampiro+One' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <header>
+        <h1>First we will build a grid</h1>
+    </header>
+    <div>
+        <button id='create_table'>Create Table</button>
+    </div>
+
+    <div id="div_main_table">
+        <table id="main_table"></table>
+    </div>
+
+  </body>
+  <style>
+      table, th, td {
+        border: 1px solid black;
+    }
+   th {
+        width: 100%;
+    }
+    .tSquare{background-color: blue; display: inline-block;}
+    .turnRed{background-color: red !important;}
+
+  </style>
+  <script>
+
+    
+
+    $(function(){
+
+        
+        $('#create_table').on('click', function(event){
+            $('#main_table').children().remove();
+            
+            var num1 = prompt('enter the number of rows down');
+            var num2 = prompt('enter the number of rows across');
+            var trWrapper1 = "<tr class='tRow'>";
+            trWrapper2 = "</tr>";
+            tdWrapper1 = '<td class="tSquare">" "</td>';
+
+            var numOfRows = function(){
+                
+                var result = "";
+                
+                for (var i=1; i <= num1; i++){
+                    var result2 = '';
+                    for (var j=1; j<=num2; j++) {
+        
+                        result2 += tdWrapper1;
+                        
+                    }    
+                    result += trWrapper1 + result2 + trWrapper2;
+                    //result += "huh???";
+                    
+                    }
+                    return result;
+                };
+            
+            $('#main_table').append(numOfRows());
+        });
+
+        $('#main_table').on("mouseover", "td", function(){
+            
+            $(this).addClass('turnRed');
+
+        })
+    });
+
+    
+    
+  </script>
+</html>

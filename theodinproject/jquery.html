@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title> insert title </title>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    
+    <!-- Custom styles for this template -->
+    
+    <style>.blue{background-color: #949499};</style>
+    <link href='https://fonts.googleapis.com/css?family=Oregano:400,400italic|Codystar:400,300|Tangerine:400,700|Great+Vibes|Yellowtail|Damion|Nothing+You+Could+Do|La+Belle+Aurore|Vampiro+One' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+  <div id="content">
+
+    <div class='tab-panel'>
+      <ul class='tabs'>
+        <li rel='panel1' class='active'>panel1</li>
+        <li rel='panel2'>panel2</li>
+        <li rel='panel3'>panel3</li>
+      </ul>
+      <div id='panel1' class="panel active">
+        <li><h2>Fantasy Football Cafe</h2>
+      <img src="http://g.espncdn.com/s/ffllm/14/images/ffl-twitter-480.png"></li>
+      </div>
+      <div id='panel2' class="panel">
+        <li><li><h2>Menu: Coffee and Draft</h2>
+      <img src="http://g.espncdn.com/s/ffllm/14/images/ffl-twitter-480.png"></li></li>
+      </div>
+      <div id='panel3' class="panel">
+        <li><li><h2>About Us</h2>
+      <img src="http://g.espncdn.com/s/ffllm/14/images/ffl-twitter-480.png"></li></li>
+      </div>
+    </div>
+  </div>  
+  </body>
+  <style>
+    .tabs li{ display: inline-block;}
+    .panel {display: none; background-color: blue}
+    .panel.active {display: block;}
+    .tab-panel ul li{background-color: red;border-radius: 10px 10px 0 0}
+  </style>
+  <script>
+
+    $(function(){ 
+      $('.tabs li').on('click', function(){
+        var id = $(this).html();
+        console.log(id);
+        var newID = id;
+        $('.tabs .active').removeClass('active');
+        $(this).addClass('active');
+        $('.tab-panel .panel .active').removeClass('active');
+        
+        //$("'#"+id+"'").addClass('active');
+        $('#'+newID).addClass('active');
+
+      });
+
+    });
+
+
+
+  </script>
+</html>
