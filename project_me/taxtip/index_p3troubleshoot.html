@@ -21,7 +21,7 @@
     <!--angular 1-->
     <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js'></script>
 
-    <script type='text/javascript' src='app.js'></script>
+    <script type='text/javascript' src='app_p3troubleshoot.js'></script>
 
     <!-- google fonts Permanent Marker', cursive; -->
     <link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
@@ -194,7 +194,7 @@
               <div class="col-xs-6 inline-blockxx">
                 <span class="ts-xl"> {{ calc.inputAmount | currency}}</span>
                 <br>
-                <span class='ts-lg'> {{ math.tipTotal(calc.inputAmount, calc.inputTip, calc.inputState) | currency }} </span>
+                <span class='ts-lg'> {{ math.tipTotal(calc.inputAmount, calc.inputTip) | currency }} </span>
                 <br>   
                 <div class='ts-xl'> {{ math.overallTotal(calc.inputAmount, math.tipTotal(calc.inputAmount, calc.inputTip)) | currency }} </div>
                 

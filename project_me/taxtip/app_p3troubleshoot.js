@@ -16,10 +16,14 @@
 		this.subTotal = function(p1, p2){
 			return p1 / p2;
 		}
-		this.tipTotal = function(p1, p2){
-			return (p1*(p2/100)); 
+		this.tipTotal = function(p1, p2, p3){
+			console.log((p2/100));
+			// console.log("this: "+this+"p3: "+(p3));
+			console.log("p3 ="+p3)
+			return (p1*(p2/100)) + (p1*(p3/100));
 		}
 		this.tipPer = function(p1, p2){
+			console.log("wtf is going on?");
 			return p1 / p2;
 		}
 		this.overallTotal = function(p1, p2){
