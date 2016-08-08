@@ -11,7 +11,12 @@
 		this.overallTotal;
 		this.overallTotalPer;
 
-		// this.parseFloat = 
+		this.calc_tipTotal2 = function(p1, p2){
+			return p1 * (p2/100);
+		}
+		// this.calc_tipTotalPer = function(p1, p2){
+		// 	return 
+		// }
 
 		this.calc_tipTotal = function(){
 			this.tipTotal = this.inputAmount * (this.inputTip/100);
@@ -24,9 +29,7 @@
 			return this.overallTotal;
 		};
 
-		this.calc_tipTotal2 = function(param1, param2){
-			return param1 * (param2/100);
-		}
+		
 
 		// myVariable = parseFloat(myVariable.toFixed(2))
 
