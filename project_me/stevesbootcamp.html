@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Insert Title</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script type="text/javascript" src="js/jquery-2.2.4.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+    <!-- bootstrap jquery -->
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <style>
+      div {
+        margin: 100px 230px;
+      }
+    </style>
+   
+  </head>
+  <body>
+    <div>
+      <h1>List of Tasks</h1>
+      <ul>
+        <li>Make a SignUp Form</li>
+        <li>Make it validate</li>
+      </ul>
+    </div>
+
+    <div id="formdiv">
+      <h4>Join us!</h4>
+      <h7>"I want to be notified of when the next cohort starts!"</h7>
+      <br>
+      <form action="link.com" id="form1" method="post">
+        <label>Name</label>
+        <input type="text" id="input_name"></input>
+        <span class="error_form" id="name_error_msg">span</span>
+        <br>
+        <label for="email">Email </label>
+        <input type="text" id='input_email'></input>
+        <span class="error_form" id="email_error_msg">span</span>
+        <br>
+        
+        <button>Submit</button>
+      </form>
+    </div>
+
+    <div id="formdiv2">
+      <form action="link.com" id="form2" method='post'>
+        <h4>Create an Account Today!<br>and receive learning material to study at your own pace</h4>
+        <label for="name">Name</label>
+        <input type="text" id='name'>
+        <button>Submit</button>
+      </form>
+      
+    </div>
+
+
+      Name      Email
+
+
+      If you want the learning material to do self-study, 
+      create an account now!
+
+      Name
+      username (needs to be 5 characters)
+      email
+      confirm email
+      password
+      confirm password
+      time zone
+      program length
+      desired start date
+      mailing list opt in
+
+
+    </div>
+      
+
+
+  </body>
+  <script>
+  	$(function(){
+      $('#name_error_msg').hide();
+      $('#email_error_msg').hide();
+
+      var error_name = false;
+      var error_email = false;
+
+      $('#input_name').focusout(function(){
+        checkName();
+      });
+      $('#input_email').focusout(function(){
+        checkEmail();
+      });
+
+      function checkName(){
+        var name_length = $('#input_name').val().length;
+        if (name_length < 5 || name_length > 20){
+          $('#name_error_msg').html('Should be between 5-20 characters');
+          $('#name_error_msg').show();
+          error_name = true;
+        } else {
+          $('#name_error_msg').hide();
+        }
+      };
+      function checkEmail(){
+        var pattern = new RegExp(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-z]{2,4}$/i);
+        if(!pattern.test($('#input_email').val())){
+          $('#email_error_msg').html("Invalid email address");
+          $('#email_error_msg').show();
+          error_email = true;  
+        } else {
+          $('#email_error_msg').hide();
+        }
+      }
+
+      $('#form1').submit(function(){
+        error_name = false;
+        error_email = false;
+
+        checkName();
+        checkEmail();
+
+        if(error_name == false && error_email == false){
+          return true;
+        } else {
+          return false;
+        }
+      })  
+
+  	});
+  </script>
+</html>

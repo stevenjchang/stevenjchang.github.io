@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='taxtip'>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title> Tip Split Calculator</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <!-- jQuery UI -->
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js" integrity="sha256-DI6NdAhhFRnO2k51mumYeDShet3I8AKCQf/tf7ARNhI=" crossorigin="anonymous"></script>
+    <!-- bootstrap jquery -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!-- handlebars.js -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js'></script>
+    <!--angular 1-->
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js'></script>
+
+    <script type='text/javascript' src='app.js'></script>
+
+    <!-- google fonts Permanent Marker', cursive; -->
+    <link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+
+    <!--local-->
+    <!-- <link href="css/main.css" rel="stylesheet"> -->
+    <!-- <script type="text/javascript"></script> -->
+  </head>
+  <style>
+    body {
+      text-align: center;
+      background-color: #1BA288;
+    }
+    #title1 {
+      background-color: #28C896;
+      margin-top: 10px;
+      padding: 20px 0px;
+    }
+    #toprow {
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 15px;
+    }
+    lable {
+      font-size: 16px;
+    }
+    .ng-invalid.ng-dirty {
+      border-color: #FA787E;
+    }
+    .ng-valid.ng-dirty {
+      border-color: #78FA89;
+    }
+    #footer {
+      position:fixed;bottom:0;left:0;right:0;height:27px;
+      color: white;
+      background-color: grey;
+      padding-top: 3px;
+    }
+    .text-pm {
+      font-family: 'Permanent Marker', cursive;
+    }
+    #radioLabel {
+      font-size: 16px;
+    } 
+    .clear {
+    clear: both;
+    }
+    .ts-xl {
+      font-size: 28px;
+    }
+    .ts-lg {
+      font-size: 23px;
+    }
+
+
+
+  </style>
+
+  <body ng-controller='TipCalcController as calc'>
+    
+    <!-- Tax Tip Calc -->
+    <div id="toprow">
+      <h1 class='text-pm' id='title1'>Tip Split Calc</h1>
+      <!-- <h7>I am going to do this project,</h7>
+      <h7> Love this Project,</h7>
+      <h7> and Complete this Project!!!</h7> -->
+    </div>
+
+    <!-- Simple Calc vs Advanced Calc Tab-->
+    <ul class="nav nav-pills">
+       <!-- <li class='active'><a data-toggle='pill' href="#simple">Simple Calc</a></li> -->
+       <!-- <li><a data-toggle='pill' href="#advanced">Advanced Calc</a></li> -->
+     </ul> 
+
+    <!-- Tab Content -->
+    <div class='tab-content col-xs-12 col-xs-offset-0'>
+
+      <!-- Calc Tab -->
+      <div id="advanced" class="tab-pane fade in active">
+        
+        <form id='formReview' ng-submit=''>
+          <ul class='list-group'>
+
+            <!-- Sub Total -->
+            <li class='list-group-item'> 
+              <div class='rowd'>
+                
+                <div class='row'>
+                <div class="col-xs-5">
+                <!-- <div>  -->
+                  <!-- <lable>how much? (before tax)</lable> -->
+                  <lable><strong>sub-total</strong></lable>
+                <!-- </div> -->
+                </div>
+                <div class="col-xs-4">
+                  <lable>before tax</lable>
+                <div class="input-group input-group-xs"> 
+                  <span class="input-group-addon">$</span>
+                  <input type="text" placeholder='enter total before tax' class="form-control" aria-label="Amount (to the nearest dollar)" ng-model='calc.inputAmount'>
+                </div>
+                </div>
+                <div class='col-xs-3'>
+                  <div class="input-group input-group-xs">
+                    <lable>state</lable>
+                    <input type="number" min=0 max=10 class="form-control" ng-model='calc.inputState'>
+                  </div>
+                </div>
+
+
+                </div>
+              </div>
+            </li>
+
+            <!-- "how many people?" -->
+            <li class='list-group-item'>
+              <div class="row">
+                <div class="col-xs-6">
+                  <lable><strong># of people</strong></lable>
+                </div>
+                <div class="col-xs-3">
+                  <div class='input-group input-group-xs'>
+                    <input type="number" min=2 max=200 class='form-control' ng-model="calc.inputPeople" ng-model-options="{ updateOn: 'blur' }">
+                  </div>
+                  
+                </div>
+              </div>          
+            </li>
+
+            <!-- tip amount -->
+            <li class='list-group-item' required>
+              <div class='row'>
+              <div class="col-xs-4" id='radioLabel'><strong>tip <br>amount</strong></div>
+              <div class='col-xs-8'>
+              <label class="radio-inline"><input type="radio" name="optradio" ng-model='calc.inputTip' ng-value=15>15%</label>
+              <label class="radio-inline"><input type="radio" name="optradio" ng-model='calc.inputTip' ng-value='18'>18%</label>
+              <label class="radio-inline"><input type="radio" name="optradio" ng-model='calc.inputTip' ng-value='20'>20%</label>
+              </div>
+              </div>
+            </li>
+
+            <li><button>Calculate!</button>
+            </li>
+
+            <!-- Tip per person / Total per person -->
+
+            <!-- <li class='list-group-item'> 
+              <div class="col-xs-6 block">
+                <span class='ts-xl'>{{calc.overallTotalPer | currency}}</span><br>
+                <span class='ts-lg'> + {{calc.tipTotalPer | currency}} </span>
+                
+
+              </div>
+              <div class="col-xs-6 block">
+                
+                <span class='ts-xl'> {{calc.calc_overallTotal() | currency}}</span><br>
+                <span class='ts-lg'> + {{calc.calc_tipTotal() | currency}} </span>
+              </div>
+              <button>_____________________</button>
+            </li> -->
+
+            <li class='list-group-item'> 
+              <div class="col-xs-6 block">
+                <span class='ts-xl'> {{calc.calc_tipTotal2(calc.inputAmount, calc.inputTip) | currency}} </span><br>
+
+                <!-- using the ng-bind method -->
+                <span class='ts-xl' ng-bind='calc.overallTotalPer | currency'></span><br>
+                
+
+
+
+                <span class='ts-lg'> + {{calc.tipTotalPer | currency}} </span>
+                
+              </div>
+              <div class="col-xs-6 block">
+                
+                <span class='ts-xl'> {{calc.calc_overallTotal() | currency}}</span><br>
+                <span class='ts-lg'> + {{calc.calc_tipTotal() | currency}} </span>
+              </div>
+              <button>_____________________</button>
+            </li>
+
+
+
+
+          </ul>
+        </form>
+      </div>
+    </div>
+
+    <div id='calculator' ng-hide='true'>
+      <!-- div.row*3>(button#btn$.btn.btn-lg{$})*4 -->
+      <div class="row">
+        <button id="btn1" class="btn btn-lg">1</button>
+        <button id="btn2" class="btn btn-lg">2</button>
+        <button id="btn3" class="btn btn-lg">3</button>
+        <button id="btn4" class="btn btn-lg"><-- .</button>
+      </div>
+      <div class="row">
+        <button id="btn1" class="btn btn-lg">4</button>
+        <button id="btn2" class="btn btn-lg">5</button>
+        <button id="btn3" class="btn btn-lg">6</button>
+        <button id="btn4" class="btn btn-lg">Next </button>
+      </div>
+      <div class="row">
+        <button id="btn1" class="btn btn-lg">7</button>
+        <button id="btn2" class="btn btn-lg">8</button>
+        <button id="btn3" class="btn btn-lg">9</button>
+        <button id="btn4" class="btn btn-lg">0  .....</button>
+      </div>
+      
+      
+    </div>
+
+    <section ng-hide="true" ng-controller='PanelController as panel'>
+      <ul class="nav nav-tabs">
+        <li ng-class='{active: panel.isSelected(1)}'><a href="" ng-click='panel.selectTab(1)'>Just Tax</a></li>
+        <li ng-class='{active: panel.isSelected(2)}'><a href="" ng-click='panel.selectTab(2)'>Bill too!</a></li>
+        <!-- <li ng-class='{active: panel.isSelected(3)}'><a href="" ng-click='panel.selectTab(3)'>Reviews</a></li> -->
+      </ul>
+    
+
+      <div class="panel" ng-show='panel.isSelected(1)'>
+        <h4>Description</h4>
+        <p>{{product.description}}</p>
+      </div>
+      <div class="panel" ng-show='panel.isSelected(2)'>
+        <h4>Specifications</h4>
+        <blockquote>None yet</blockquote>
+      </div>
+      <div class="panel" ng-show='panel.isSelected(3)'>
+        <h4>Reviews</h4>
+        <blockquote>None yet</blockquote>
+      </div>
+    </section>
+
+  </body>
+
+  <footer id='footer'>
+    <p class='col-xs-6'>About</p>
+    <p class='col-xs-6'>Feedback</p>
+    
+  </footer>
+  <script>
+  	$(function(){
+
+  	});
+  </script>
+</html>
+
+
+<!-- Feedback
+I would like to give a:
+  - public review
+  - private feedback -->
+
+
+
+
+
+
+
+
+
+
+

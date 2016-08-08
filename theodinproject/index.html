@@ -957,9 +957,9 @@
     var randomNum = function(){
         return Math.floor(Math.random() * 20) + 1;
     };
-    // var snakeHead = [randomNum(), randomNum()];
-    var snakeHead = [10,10];
-    // var snakeArray = [snakeHead, [snakeHead[0],snakeHead[1]-1], [snakeHead[0],snakeHead[1]-2]];
+    // var testArr = [randomNum(), randomNum()];
+    var testArr = [10,10];
+    // var snakeArray = [testArr, [testArr[0],testArr[1]-1], [testArr[0],testArr[1]-2]];
     var snakeArray = [[10,10],[10,9],[10,8],[10,7],[10,6],[10,5]];
     var food = [randomNum(), randomNum()];
 
@@ -979,70 +979,119 @@
 // ----------------aka--------------
 
     var right = function(arr){
+        // clearTimeout(timeoutController);
         var newThing = arr;
         newThing[1] += 1;
         return newThing;
     };
     function left (arr){
+        // clearTimeout(timeoutController);
+        // arr[1] -= 1;
+        // return arr;
         var newThing2 = arr;
         newThing2[1] -= 1;
         return newThing2;
     };
     function up (arr){
+        // clearTimeout(timeoutController);
+        // arr[0] -= 1;
+        // return arr;
         var newThing3 = arr;
         newThing3[0] -= 1;
         return newThing3;
     };
     var down = function(arr){
+        // clearTimeout(timeoutController);
+        // arr[0] += 1;
+        // return arr;
         var newThing4 = arr;
         newThing4[0] += 1;
         return newThing4;
     };
-    var current_key = right();
+    var current_key = right;
     var timeoutController = "";
+
+
+
+    
+
     
                                 // JQUERY      JQUERY      JQUERY
 
     $(function(){
         $(displaySnakePos(food)).addClass('turnGreen');
+        // $(displaySnakePos(testArr)).addClass('turnRed');
+        // pageRender();
+
+        // var actualSnake = function(arr){
+        //     $(displaySnakePos(arr.pop())).removeClass('turnRed');
+
+        //     arr.unshift(testArr);
+        //     // snakeLength ++;
+        //     for (i=0; i<arr.length; i++){
+        //         // $(displaySnakePos(arr.pop())).removeClass('turnRed');
+        //         $(displaySnakePos(arr[i])).addClass('turnRed');
+                
+        //     };
+            
+        // };
+        
+        // var displaySnakePos2 = function(arrOfArr){
+            
+        //     for (var i=0;i<arrOfArr.length;i++){
+        //         rowBoxPos = '"#row" + arrOfArr[i][0] + " #box" + arrOfArr[i][1]';
+        //         console.log(rowBowPos);
+        //         // $(rowBowPos).addClass('turnRed');
+        //     }
+        // };
 
         var pageRender = function(){
             var displaySnakePos2 = function(arrOfArr){
-                $('.turnRed').removeClass('turnRed');
-                    for (var i=0;i<arrOfArr.length;i++){
-                        var rowBowPos = "#row" + arrOfArr[i][0] + " #box" + arrOfArr[i][1];
-                        // console.log(rowBowPos);
-                        console.log(rowBowPos);
-                        $(rowBowPos).addClass('turnRed');
-                    }
-                };
-            if  (snakeHead[0] == food[0] && snakeHead[1] == food[1]) {
+            $('.turnRed').removeClass('turnRed');
+                for (var i=0;i<arrOfArr.length;i++){
+                    var rowBowPos = "#row" + arrOfArr[i][0] + " #box" + arrOfArr[i][1];
+                    // console.log(rowBowPos);
+                    console.log(rowBowPos);
+                    $(rowBowPos).addClass('turnRed');
+                }
+            };
+
+            if  (testArr[0] == food[0] && testArr[1] == food[1]) {
                 $(displaySnakePos(food)).removeClass('turnGreen');
                 food = [randomNum(), randomNum()];
                 $(displaySnakePos(food)).addClass('turnGreen');
                 clearTimeout(timeoutController);
-                current_key(snakeHead);
-                $(displaySnakePos(snakeHead)).addClass('turnRed');
+                current_key(testArr);
+                $(displaySnakePos(testArr)).addClass('turnRed');
                 timeoutController = setTimeout(pageRender, 500);
-                console.log(snakeHead);
+                console.log(testArr);
             } 
-
-            else if (snakeHead[0] >= 0 && snakeHead[0] <=20 && snakeHead[1] >= 0 && snakeHead[1] <= 20) {
+            else if (testArr[0] >= 0 && testArr[0] <=20 && testArr[1] >= 0 && testArr[1] <= 20) {
                 clearTimeout(timeoutController);
-                snakeArray.unshift(current_key(snakeHead));
+                var temptemp = testArr;
+                snakeArray.unshift(current_key(temptemp));
                 snakeArray.pop();
                 displaySnakePos2(snakeArray);
-                console.log("snakeHead = "+snakeHead+" snakeArray = "+snakeArray);
-            } 
+                
+                
 
+                
+                console.log("testArr = "+testArr+" snakeArray = "+snakeArray);
+
+
+                
+                // $(displaySnakePos(testArr)).addClass('turnRed');
+                timeoutController = setTimeout(pageRender, 4000);
+                // console.log(testArr);
+            } 
             else {
                 $('.turnRed').removeClass('turnRed');
-                snakeHead = [10, 10];
+                testArr = [10, 10];
                 clearTimeout(timeoutController);
-                current_key(snakeHead);
-                $(displaySnakePos(snakeHead)).addClass('turnRed');
+                current_key(testArr);
+                $(displaySnakePos(testArr)).addClass('turnRed');
                 timeoutController = setTimeout(pageRender, 500);
-                console.log(snakeHead);
+                console.log(testArr);
             }
         };
 
