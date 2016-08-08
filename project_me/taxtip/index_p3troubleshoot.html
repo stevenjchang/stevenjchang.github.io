@@ -184,9 +184,9 @@
                 <span class='ts-xl'> {{ math.subTotal(calc.inputAmount, calc.inputPeople) | currency}}</span>
                 <br>
                 
-                <span class='ts-lg'> + {{ math.tipPer(math.tipTotal(calc.inputAmount, calc.inputTip), calc.inputPeople) | currency}}</span>
+                <span class='ts-lg'> + {{ math.tipPer(math.tipTotal(calc.inputAmount, calc.inputTip, calc.inputState), calc.inputPeople) | currency}}</span>
                 <br>
-                <span class='ts-xl'> {{math.overallPer(math.overallTotal(calc.inputAmount, math.tipTotal(calc.inputAmount, calc.inputTip)), calc.inputPeople) | currency}} </span><br>
+                <span class='ts-xl'> {{ math.overallPer(math.overallTotal(calc.inputAmount, math.tipTotal(calc.inputAmount, calc.inputTip, calc.inputState)), calc.inputPeople) | currency}} </span><br>
                 <p> calc.inputState {{calc.inputState}}</p>
 
               </div>
@@ -194,9 +194,9 @@
               <div class="col-xs-6 inline-blockxx">
                 <span class="ts-xl"> {{ calc.inputAmount | currency}}</span>
                 <br>
-                <span class='ts-lg'> {{ math.tipTotal(calc.inputAmount, calc.inputTip) | currency }} </span>
+                <span class='ts-lg'> {{ math.tipTotal(calc.inputAmount, calc.inputTip, calc.inputState) | currency }} </span>
                 <br>   
-                <div class='ts-xl'> {{ math.overallTotal(calc.inputAmount, math.tipTotal(calc.inputAmount, calc.inputTip)) | currency }} </div>
+                <div class='ts-xl'> {{ math.overallTotal(calc.inputAmount, math.tipTotal(calc.inputAmount, calc.inputTip, calc.inputState)) | currency }} </div>
                 
               </div>
               <div>
