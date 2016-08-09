@@ -21,7 +21,7 @@
     <!--angular 1-->
     <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js'></script>
 
-    <script type='text/javascript' src='app.js'></script>
+    <script type='text/javascript' src='app_p3troubleshoot.js'></script>
 
     <!-- google fonts Permanent Marker', cursive; -->
     <link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
@@ -184,10 +184,9 @@
                 <span class='ts-xl'> {{ math.subTotal(calc.inputAmount, calc.inputPeople) | currency}}</span>
                 <br>
                 
-                <span class='ts-lg'> + {{ math.tipPer(math.tipTotal(calc.inputAmount, calc.inputTip), calc.inputPeople) | currency}}</span>
+                <span class='ts-lg'> + {{ math.tipPer(math.tipTotal(calc.inputAmount, calc.inputTip, calc.inputState), calc.inputPeople) | currency}}</span>
                 <br>
-                <span class='ts-xl'> {{math.overallPer(math.overallTotal(calc.inputAmount, math.tipTotal(calc.inputAmount, calc.inputTip)), calc.inputPeople) | currency}} </span><br>
-                <p> calc.inputState {{calc.inputState}}</p>
+                <span class='ts-xl'> {{ math.overallPer(math.overallTotal(calc.inputAmount, math.tipTotal(calc.inputAmount, calc.inputTip, calc.inputState)), calc.inputPeople) | currency}} </span><br>
 
               </div>
 
@@ -196,7 +195,7 @@
                 <br>
                 <span class='ts-lg'> {{ math.tipTotal(calc.inputAmount, calc.inputTip, calc.inputState) | currency }} </span>
                 <br>   
-                <div class='ts-xl'> {{ math.overallTotal(calc.inputAmount, math.tipTotal(calc.inputAmount, calc.inputTip)) | currency }} </div>
+                <div class='ts-xl'> {{ math.overallTotal(calc.inputAmount, math.tipTotal(calc.inputAmount, calc.inputTip, calc.inputState)) | currency }} </div>
                 
               </div>
               <div>
@@ -266,9 +265,9 @@
     
   </footer>
   <script>
-  	$(function(){
+    $(function(){
 
-  	});
+    });
   </script>
 </html>
 
