@@ -8,12 +8,29 @@
 		this.inputState = 9;
 		this.inputPeople = 4;
 		this.inputTip = 15;
+		this.inputSpecialCaseNo = 2;
+		this.sc1;
+		this.sc2;
+		this.arrarr = [];
+		this.toggle = false;
+		this.toggle1 = {
+			"person": ["Person 1", "Person 2", "No fucking way", "Person 4"],
+			"something": ["v1", "v2", "v3", "v4"]
+		}
+		
+
+		this.genSpecial = function(num){
+			for (var i=1; i<num; i++){
+				// this.arrarr.push('<div class="col-xs-4 col-xs-offset-1"><label>person '+ i + '</label></div><div class="col-xs-5 col-xs-offset-1"><input type="text" class="form-control"></div></div>');
+			};
+			return this.arrarr;
+		}
 	}); // app.controller('MainController')
 
 	// <li class='list-group-item' ng-controller='MathController as math'> 
 	app.controller('MathController', function(){
 		//as math
-		this.subTotal = function(p1, p2){
+		this.subTotalPer = function(p1, p2){
 			return p1 / p2;
 		}
 		this.tipTotal = function(p1, p2, p3){
@@ -21,7 +38,6 @@
 			return tot;
 		}
 		this.tipPer = function(p1, p2){
-			// console.log("wtf is going on?");
 			return p1 / p2;
 		}
 		this.overallTotal = function(p1, p2){
@@ -30,33 +46,11 @@
 		this.overallPer = function(p1, p2){
 			return p1 / p2;
 		}
-	});
+		this.specialCase = function(s, p1, p2){
+			return s * ((p1+p2)/100);
+		}
 
-	// 	// this.tipTotal;
-	// 	// this.tipTotalPer = 0;
-	// 	// this.overallTotal;
-	// 	// this.overallTotalPer;
-
-	// 	this.calc_tipTotal2 = function(p1, p2){
-	// 		return p1 * (p2/100);
-	// 	}
-	// 	// this.calc_tipTotalPer = function(p1, p2){
-	// 	// 	return 
-	// 	// }
-
-	// 	this.calc_tipTotal = function(){
-	// 		this.tipTotal = this.inputAmount * (this.inputTip/100);
-	// 		this.tipTotalPer = (this.tipTotal / this.inputPeople);
-	// 		return this.tipTotal;
-	// 	};
-	// 	this.calc_overallTotal = function(){
-	// 		this.overallTotal = parseFloat(this.inputAmount) + parseFloat(this.tipTotal);
-	// 		this.overallTotalPer = parseFloat(this.overallTotal) / this.inputPeople;
-	// 		return this.overallTotal;
-	// 	}
-
-	// });  // app.controller('MainController')
-
+	}); // app.controller('MainController')
 
 
 	app.directive('testDirective', function(){

@@ -21,7 +21,7 @@
     <!--angular 1-->
     <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js'></script>
 
-    <script type='text/javascript' src='app_p3troubleshoot.js'></script>
+    <script type='text/javascript' src='app.js'></script>
 
     <!-- google fonts Permanent Marker', cursive; -->
     <link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
@@ -33,15 +33,16 @@
   <style>
     body {
       text-align: center;
-      background-color: #1BA288;
+      /*background-color: #1BA288;*/
+      background-color: #843E7E;
     }
     #title1 {
-      background-color: #28C896;
+      background-color: #843E7E;
       margin-top: 10px;
-      padding: 20px 0px;
+      padding: 0px 0px;
     }
     #toprow {
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
     p {
       font-size: 15px;
@@ -80,38 +81,137 @@
       display: inline-block;
       overflow: auto;
     }
+    .in-1 {
+      border-top: 0px;
+      border-left: 0px;
+      border-bottom: 2px;
+      border-right: 0px;
+      border-style: solid;
+      border-color: black;
+      border-radius: 0px;
+    }
+
+  </style>
+  <!-- imported from toggle.html -->
+  <!-- originally from http://www.w3schools.com/howto/howto_css_switch.asp -->
+  <style>
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+
+    .switch input {display:none;}
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+
+    input:focus + .slider {
+      box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+      border-radius: 34px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
   </style>
 
   <body ng-controller='MainController as calc'>
     
     <!-- Tax Tip Calc -->
     <div id="toprow">
-      <h1 class='text-pm' id='title1'>Tip Split Calc</h1>
+      <h1 class='text-pm' id='title1'>Tip Calc</h1>
     </div>
 
-
-
     <!-- Tab Content -->
-    <div class='tab-content col-xs-12 col-xs-offset-0'>
+    <div class='tab-content col-xs-12'>
+    <!-- <div> -->
 
       <!-- Calc Tab -->
       <div id="advanced" class="tab-pane fade in active">
-        
+      <!-- <div>   -->
         <form id='formReview' ng-submit=''>
-          <ul class='list-group'>
-
-            <!-- Sub Total -->
-            <li class='list-group-item'> 
-              <div class='rowd'>
-                
-                <div class='row'>
-                <div class="col-xs-5">
-                <!-- <div>  -->
-                  <!-- <lable>how much? (before tax)</lable> -->
-                  <lable><strong>sub-total</strong></lable>
-                <!-- </div> -->
+          <!-- List 1 - MathController -->
+          <li class='list-group-item' ng-controller='MathController as math'>
+            <div class='row'>
+              <!-- <div class='col-xs-12'>  -->
+                <div class="col-xs-6">
+                  <span class='ts-xl'> 
+                  {{ math.subTotalPer(calc.inputAmount, calc.inputPeople) | currency}}</span>
+                  <br>
+                  <span class='ts-lg'> 
+                  + {{ math.tipPer(math.tipTotal(calc.inputAmount, calc.inputTip, calc.inputState), calc.inputPeople) | currency}}</span>
+                  <br>
+                  <span class='ts-xl'> 
+                  {{ math.overallPer(math.overallTotal(calc.inputAmount, math.tipTotal(calc.inputAmount, calc.inputTip, calc.inputState)), calc.inputPeople) | currency}} </span>
                 </div>
+                <div class="col-xs-6">
+                  <span class="ts-xl"> 
+                  {{ calc.inputAmount | currency}}</span>
+                  <br>
+                  <span class='ts-lg'> 
+                  {{ math.tipTotal(calc.inputAmount, calc.inputTip, calc.inputState) | currency }} </span>
+                  <br>   
+                  <span class='ts-xl'> 
+                  {{ math.overallTotal(calc.inputAmount, math.tipTotal(calc.inputAmount, calc.inputTip, calc.inputState)) | currency }} </span> 
+                </div>
+               <!--  <div class="row">
+                  <p> {{math.specialCase(calc.sc1, calc.inputTip, calc.inputState)}} </p>
+                  <p> {{math.specialCase(calc.sc2, calc.inputTip, calc.inputState)}} </p>
+                </div> -->
+              <!-- </div> -->
+            </div>
+          </li>
+
+
+          <ul class='list-group'>
+            <!-- Sub Total -->
+            <li class='list-group-item'>
+                <div class='row'>
                 <div class="col-xs-4">
+                
+                  <!-- <lable>how much? (before tax)</lable> -->
+                  <lable>#of People</lable>
+                  <input type="number" ng-model="calc.inputPeople" min=2 max=200 class='form-control'>
+                
+                </div>
+                <div class="col-xs-5">
                   <lable>before tax</lable>
                 <div class="input-group input-group-xs"> 
                   <span class="input-group-addon">$</span>
@@ -120,120 +220,62 @@
                 </div>
                 <div class='col-xs-3'>
                   <div class="input-group input-group-xs">
-                    <lable>state</lable>
-                    <input type="number" ng-model='calc.inputState' min=0 max=10 class="form-control">
+                    <lable>state</lable><br>
+                    <input class='in-1' type="number" ng-model='calc.inputState' min=0 max=10 class="form-control">
                   </div>
                 </div>
+                </div>
+            </li>
 
-
+            <!-- Special Case -->
+            <!-- work on this later -->
+            <!-- work on this later ends line 252-->
+            <!-- <li class="list-group-item" ng-hide=''>
+              <div class="row">
+                <div class=col-xs-6>
+                  <label for=""># of Special Cases</label>
+                  <input type="number" ng-model='calc.inputSpecialCaseNo' min=0 max=10 class='form-control'>
+                  <br>
+                </div>
+                <div class="col-xs-6">
+                  <label>Advanced Options</label>
+                  <label class="switch">
+                    <input type="checkbox" ng-model='calc.toggle'>
+                    <div class="slider round"></div>
+                  </label>
                 </div>
               </div>
-            </li>
-
-            <!-- "how many people?" -->
-            <li class='list-group-item'>
               <div class="row">
                 <div class="col-xs-6">
-                  <lable><strong># of people</strong></lable>
+                  <p ng-repeat='name in calc.toggle1'> {{ name.person }} </p>
+                  <input type="text" ng-model='calc.sc1' class='form-control' ng-repeat='some in calc.toggle1.something' value='{{ some }}'> 
                 </div>
-                <div class="col-xs-3">
-                  <div class='input-group input-group-xs'>
-                    <input type="number" ng-model="calc.inputPeople" min=2 max=200 class='form-control'>
-                    <!-- To use blur:   ng-model-options="{ updateOn: 'blur' }" -->
-                  </div>
-                  
-                </div>
-              </div>          
-            </li>
+              </div>
+            </li> -->
+            <!-- Special Case ends here -->
+            <!-- Special Case ends here -->
+
 
             <!-- tip amount -->
             <li class='list-group-item' required>
               <div class='row'>
-              <div class="col-xs-4" id='radioLabel'><strong>tip <br>amount</strong></div>
-              <div class='col-xs-8'>
-              <label class="radio-inline"><input type="radio" name="optradio" ng-model='calc.inputTip' ng-value=15>15%</label>
-              <label class="radio-inline"><input type="radio" name="optradio" ng-model='calc.inputTip' ng-value='18'>18%</label>
-              <label class="radio-inline"><input type="radio" name="optradio" ng-model='calc.inputTip' ng-value='20'>20%</label>
-              </div>
-              </div>
-            </li>
-
-            <li><button>Calculate!</button>
-            </li>
-
-            <!-- Tip per person / Total per person -->
-
-            <!-- <li class='list-group-item'> 
-              <div class="col-xs-6 block">
-                <span class='ts-xl'>{{calc.overallTotalPer | currency}}</span><br>
-                <span class='ts-lg'> + {{calc.tipTotalPer | currency}} </span>
-                
-
-              </div>
-              <div class="col-xs-6 block">
-                
-                <span class='ts-xl'> {{calc.calc_overallTotal() | currency}}</span><br>
-                <span class='ts-lg'> + {{calc.calc_tipTotal() | currency}} </span>
-              </div>
-              <button>_____________________</button>
-            </li> -->
-
-            <li class='list-group-item inline-blockx' ng-controller='MathController as math'> 
-              <!-- tipTotal() and tipPer() -->
-              <div class="col-xs-6 inline-blockxx">
-                <span class='ts-xl'> {{ math.subTotal(calc.inputAmount, calc.inputPeople) | currency}}</span>
-                <br>
-                
-                <span class='ts-lg'> + {{ math.tipPer(math.tipTotal(calc.inputAmount, calc.inputTip, calc.inputState), calc.inputPeople) | currency}}</span>
-                <br>
-                <span class='ts-xl'> {{ math.overallPer(math.overallTotal(calc.inputAmount, math.tipTotal(calc.inputAmount, calc.inputTip, calc.inputState)), calc.inputPeople) | currency}} </span><br>
-
-              </div>
-
-              <div class="col-xs-6 inline-blockxx">
-                <span class="ts-xl"> {{ calc.inputAmount | currency}}</span>
-                <br>
-                <span class='ts-lg'> {{ math.tipTotal(calc.inputAmount, calc.inputTip, calc.inputState) | currency }} </span>
-                <br>   
-                <div class='ts-xl'> {{ math.overallTotal(calc.inputAmount, math.tipTotal(calc.inputAmount, calc.inputTip, calc.inputState)) | currency }} </div>
-                
-              </div>
-              <div>
-              <!-- <button>_____________________</button> -->
+                <div class="col-xs-4" id='radioLabel'><strong>tip <br>amount</strong></div>
+                <div class='col-xs-8'>
+                  <label class="radio-inline"><input type="radio" name="optradio" ng-model='calc.inputTip' ng-value=15>15%</label>
+                  <label class="radio-inline"><input type="radio" name="optradio" ng-model='calc.inputTip' ng-value='18'>18%</label>
+                  <label class="radio-inline"><input type="radio" name="optradio" ng-model='calc.inputTip' ng-value='20'>20%</label>
+                </div>
               </div>
             </li>
 
-
-
+            <li class='list-group-item'><button>Calculate!</button>
+            </li>
 
           </ul>
         </form>
       </div>
     </div>
 
-    <div id='calculator' ng-hide='true'>
-      <!-- div.row*3>(button#btn$.btn.btn-lg{$})*4 -->
-      <div class="row">
-        <button id="btn1" class="btn btn-lg">1</button>
-        <button id="btn2" class="btn btn-lg">2</button>
-        <button id="btn3" class="btn btn-lg">3</button>
-        <button id="btn4" class="btn btn-lg"><-- .</button>
-      </div>
-      <div class="row">
-        <button id="btn1" class="btn btn-lg">4</button>
-        <button id="btn2" class="btn btn-lg">5</button>
-        <button id="btn3" class="btn btn-lg">6</button>
-        <button id="btn4" class="btn btn-lg">Next </button>
-      </div>
-      <div class="row">
-        <button id="btn1" class="btn btn-lg">7</button>
-        <button id="btn2" class="btn btn-lg">8</button>
-        <button id="btn3" class="btn btn-lg">9</button>
-        <button id="btn4" class="btn btn-lg">0  .....</button>
-      </div>
-      
-      
-    </div>
 
     <section ng-hide="true" ng-controller='PanelController as panel'>
       <ul class="nav nav-tabs">
@@ -260,8 +302,12 @@
   </body>
 
   <footer id='footer'>
-    <p class='col-xs-6'>About</p>
-    <p class='col-xs-6'>Feedback</p>
+    <div class='col-xs-6'>
+      <a href="about.html" style="color:white">About</a>
+    </div>
+    <div class='col-xs-6'>
+      <a href="feedback.html" style="color:white">Feedback</a>
+    </div>
     
   </footer>
   <script>
@@ -272,10 +318,30 @@
 </html>
 
 
-<!-- Feedback
-I would like to give a:
-  - public review
-  - private feedback -->
+<!-- Advanced Features:
+
+Input
+  # of people
+    - Add the word (total)
+  # of Special Cases (make a boolean function)
+    - toggle.hide()
+    - dropdown for # of special cases?
+    - input Amount for person 1
+    - input Amount for person 2
+    - "+" button to add more persons
+
+Display
+  Person 1 pays:
+  Person 2 pays:
+  Everyone else pays:
+
+Logic
+  special_case_amount = p1+p2+p3+p4
+  everyone_else_amount = subtotal - special_case_amount
+
+ -->
+
+
 
 
 
