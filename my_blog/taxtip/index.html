@@ -34,15 +34,9 @@
     body {
       text-align: center;
       /*background-color: #1BA288;*/
-      background-color: #843E7E;
-    }
-    #title1 {
-      background-color: #843E7E;
-      margin-top: 10px;
-      padding: 0px 0px;
-    }
-    #toprow {
-      margin-bottom: 10px;
+      /*background-color: #843E7E;*/
+      /*background-color: #104C76;*/
+      background-color: #0C3D60;
     }
     p {
       font-size: 15px;
@@ -55,6 +49,16 @@
     }
     .ng-valid.ng-dirty {
       border-color: #78FA89;
+    }
+    .navbar {
+      background-color: #0C3D60;
+    }
+    .list-group-item{
+      background-color: #0C3D60;
+      color: grey;
+    }
+    .list-group-item input{
+      background-color: #0C3D60;
     }
     #footer {
       position:fixed;bottom:0;left:0;right:0;height:27px;
@@ -84,11 +88,12 @@
     .in-1 {
       border-top: 0px;
       border-left: 0px;
-      border-bottom: 2px;
+      border-bottom: 1.5px;
       border-right: 0px;
       border-style: solid;
-      border-color: black;
+      border-color: grey;
       border-radius: 0px;
+      padding-bottom: 3px;
     }
 
   </style>
@@ -153,22 +158,39 @@
   </style>
 
   <body ng-controller='MainController as calc'>
-    
-    <!-- Tax Tip Calc -->
-    <div id="toprow">
-      <h1 class='text-pm' id='title1'>Tip Calc</h1>
-    </div>
+    <!-- <header> -->
+      <div class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <a href="#" class='navbar-brand'>Tip Calc App</a>
+            <button class="navbar-toggle" data-toggle='collapse' data-target='.navHeaderCollapse'>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse navHeaderCollapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li class='active'><a href="#">Home</a></li>
+              <li><a href="#">Away</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+           </div>
+        </div>
+      </div>
+    <!-- </header> -->
 
     <!-- Tab Content -->
-    <div class='tab-content col-xs-12'>
+    <div id='tab-content' class='tab-content col-xs-10 col-xs-offset-1'>
     <!-- <div> -->
 
       <!-- Calc Tab -->
       <div id="advanced" class="tab-pane fade in active">
       <!-- <div>   -->
-        <form id='formReview' ng-submit=''>
+        <form id='formReview' ng-submit='calc.submitthis()'>
           <!-- List 1 - MathController -->
-          <li class='list-group-item' ng-controller='MathController as math'>
+          <li class='list-group-item' ng-controller='MathController as math' ng-show='true'>
             <div class='row'>
               <!-- <div class='col-xs-12'>  -->
                 <div class="col-xs-6">
@@ -204,27 +226,27 @@
             <!-- Sub Total -->
             <li class='list-group-item'>
                 <div class='row'>
-                <div class="col-xs-4">
-                
-                  <!-- <lable>how much? (before tax)</lable> -->
-                  <lable>#of People</lable>
-                  <input type="number" ng-model="calc.inputPeople" min=2 max=200 class='form-control'>
-                
-                </div>
-                <div class="col-xs-5">
-                  <lable>before tax</lable>
-                <div class="input-group input-group-xs"> 
-                  <span class="input-group-addon">$</span>
-                  <input type="text" ng-model='calc.inputAmount' placeholder='enter total before tax' class="form-control" aria-label="Amount (to the nearest dollar)">
-                </div>
-                </div>
-                <div class='col-xs-3'>
-                  <div class="input-group input-group-xs">
-                    <lable>state</lable><br>
-                    <input class='in-1' type="number" ng-model='calc.inputState' min=0 max=10 class="form-control">
+                  <div class="col-xs-6 col-xs-offset-3">
+                    <!-- <lable>before tax</lable> -->
+                  <div class="input-group input-group-xs"> 
+                    <!-- <span class="input-group-addon">$</span> -->
+                    <input id='test' type="text" ng-model='calc.inputAmount' placeholder='sub-total' class="in-1 form-control" aria-label="Amount (to the nearest dollar)">
                   </div>
-                </div>
-                </div>
+                  </div>
+                  
+                  <div class='col-xs-6 col-xs-offset-3'>
+                    <div class="input-group input-group-xs">
+                      <!-- <lable>state</lable><br> -->
+                      <!-- <input class='in-1 form-control' type="number" ng-model='calc.inputState' min=0 max=10 class="form-control" placeholder="$0.00 tax-amount"> -->
+                      <input type="text" class="in-1 form-control" ng-model='calc.inputState' placeholder='enter total tax'>
+                    </div>
+                  </div>
+
+                  <div class="col-xs-6 col-xs-offset-3">
+                    <!-- <lable>#of People</lable> -->
+                    <input type="number" ng-model="calc.inputPeople" min=2 max=200 class='in-1 form-control' placeholder="# of people">
+                  </div>
+                </div> <!-- </div> row -->
             </li>
 
             <!-- Special Case -->
@@ -259,8 +281,8 @@
             <!-- tip amount -->
             <li class='list-group-item' required>
               <div class='row'>
-                <div class="col-xs-4" id='radioLabel'><strong>tip <br>amount</strong></div>
-                <div class='col-xs-8'>
+                <div class="col-xs-3" id='radioLabel'>tip <br>amount</div>
+                <div class='col-xs-9'>
                   <label class="radio-inline"><input type="radio" name="optradio" ng-model='calc.inputTip' ng-value=15>15%</label>
                   <label class="radio-inline"><input type="radio" name="optradio" ng-model='calc.inputTip' ng-value='18'>18%</label>
                   <label class="radio-inline"><input type="radio" name="optradio" ng-model='calc.inputTip' ng-value='20'>20%</label>
@@ -268,7 +290,7 @@
               </div>
             </li>
 
-            <li class='list-group-item'><button>Calculate!</button>
+            <li class='list-group-item'><button type='submit'>Calculate!</button>
             </li>
 
           </ul>
@@ -281,7 +303,7 @@
       <ul class="nav nav-tabs">
         <li ng-class='{active: panel.isSelected(1)}'><a href="" ng-click='panel.selectTab(1)'>Just Tax</a></li>
         <li ng-class='{active: panel.isSelected(2)}'><a href="" ng-click='panel.selectTab(2)'>Bill too!</a></li>
-        <!-- <li ng-class='{active: panel.isSelected(3)}'><a href="" ng-click='panel.selectTab(3)'>Reviews</a></li> -->
+        <li ng-class='{active: panel.isSelected(3)}'><a href="" ng-click='panel.selectTab(3)'>Reviews</a></li>
       </ul>
     
 

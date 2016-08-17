@@ -4,9 +4,9 @@
 	// <body ng-controller='MainController as calc'>
 	app.controller('MainController', function(){
 		//as calc
-		this.inputAmount = 100;
-		this.inputState = 9;
-		this.inputPeople = 4;
+		this.inputAmount;
+		this.inputState;
+		this.inputPeople;
 		this.inputTip = 15;
 		this.inputSpecialCaseNo = 2;
 		this.sc1;
@@ -16,6 +16,9 @@
 		this.toggle1 = {
 			"person": ["Person 1", "Person 2", "No fucking way", "Person 4"],
 			"something": ["v1", "v2", "v3", "v4"]
+		};
+		this.submitthis = function(){
+			console.log("this and that");
 		}
 		
 
