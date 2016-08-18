@@ -4,31 +4,88 @@
 	// <body ng-controller='MainController as calc'>
 	app.controller('MainController', function(){
 		//as calc
+
+		// this.inputAmount = 100;
+		// this.inputTax = 9;
+		// this.inputPeople = 4;
+		// this.inputTip = 15;
+		
 		this.inputAmount;
-		this.inputState;
+		this.inputTax;
 		this.inputPeople;
 		this.inputTip = 15;
-		this.inputSpecialCaseNo = 2;
-		this.sc1;
-		this.sc2;
-		this.arrarr = [];
-		this.toggle = false;
-		this.toggle1 = {
-			"person": ["Person 1", "Person 2", "No fucking way", "Person 4"],
-			"something": ["v1", "v2", "v3", "v4"]
-		};
-		this.submitthis = function(){
-			console.log("this and that");
-		}
-		
+		this.objectData = [
+			{
+				amount: "some name",
+				tax: "some price",
+				tip: "some name",
+				people: "some name",
+				taxPercent: "some name",
+				taxTipPercentage: "haha",
+				taxTip: "some name",
+				ind_subTotal: "some name",
+				ind_taxTip: "some name",
+				ind_total: "some name",
+				group_subTotal: "some name",
+				group_taxTipTotal: "some name",
+				overall_total: "some name",
+			}
+		];
 
-		this.genSpecial = function(num){
-			for (var i=1; i<num; i++){
-				// this.arrarr.push('<div class="col-xs-4 col-xs-offset-1"><label>person '+ i + '</label></div><div class="col-xs-5 col-xs-offset-1"><input type="text" class="form-control"></div></div>');
-			};
-			return this.arrarr;
+		// toggle switch
+		this.toggleResults = false;
+		// this.objectData = {dat: [this.inputState, v2, v3, v4]};
+		this.calculateButton = function(){
+			var amount = parseFloat(this.inputAmount);
+			var tax = parseFloat(this.inputTax);
+			var tip = parseFloat(this.inputTip);
+			var people = parseFloat(this.inputPeople);
+			var taxPercent_func = function(){
+				return (tax*100)/amount;
+			}
+			var taxTipPercentage_func = function(){
+				return (taxPercent_func() + tip);
+			}
+			var taxTip_func = function(){
+				return amount * (taxTipPercentage_func()/100);
+			}
+			var ind_subTotal_func = function(){
+				return amount / people;
+			}
+			var ind_taxTip_func = function(){
+				return ind_subTotal_func() * (taxTipPercentage_func()/100);
+			}
+			var ind_total_func = function(){
+				return ind_subTotal_func() + ind_taxTip_func();
+			}
+			var group_subTotal_func = function(){
+
+			}
+			var overall_total_func = function(){
+				return amount + taxTip_func();
+			}
+
+			this.objectData = [
+				{
+					amount: this.inputAmount,
+					tax: this.inputTax,
+					people: this.inputPeople,
+					tip: this.inputTip,
+					taxPercent: taxPercent_func(),
+					taxTipPercentage: taxTipPercentage_func(),
+					taxTip: taxTip_func(),
+					ind_subTotal: ind_subTotal_func(),
+					ind_taxTip: ind_taxTip_func(),
+					ind_total: ind_total_func(),
+					group_subTotal: this.inputAmount,
+					group_taxTipTotal: taxTip_func(),
+					overall_total: overall_total_func(),
+				}
+			];
+			this.toggleResults = true;
 		}
-	}); // app.controller('MainController')
+	}); // end of app.controller('MainController')
+	
 
 	// <li class='list-group-item' ng-controller='MathController as math'> 
 	app.controller('MathController', function(){
