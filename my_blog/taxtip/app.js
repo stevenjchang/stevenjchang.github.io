@@ -4,12 +4,7 @@
 	// <body ng-controller='MainController as calc'>
 	app.controller('MainController', function(){
 		//as calc
-
-		// this.inputAmount = 100;
-		// this.inputTax = 9;
-		// this.inputPeople = 4;
-		// this.inputTip = 15;
-		
+		this.tabb = 0;
 		this.inputAmount;
 		this.inputTax;
 		this.inputPeople;
@@ -83,11 +78,12 @@
 				}
 			];
 			this.toggleResults = true;
+			this.tabb = 0;
 		}
 	}); // end of app.controller('MainController')
-	
 
-	// <li class='list-group-item' ng-controller='MathController as math'> 
+
+	// <li class='list-group-item' ng-controller='MathController as math'>
 	app.controller('MathController', function(){
 		//as math
 		this.subTotalPer = function(p1, p2){
@@ -160,6 +156,3 @@
 		}
 	];
 })();
-
-
-
