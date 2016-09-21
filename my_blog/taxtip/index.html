@@ -68,11 +68,12 @@
       /*color: #2980b9;*/
       background-color: #2980b9;
     }
-    .navbar-brand{
+    .navbar-header a{
       font-size: 21px;
-      /*color: #E1ECFF;*/
+      color: #212020 !important;
     }
     .navbar-brand a{
+      color: red;
     }
     .ng-invalid.ng-dirty {
       border-color: #FA787E;
@@ -83,6 +84,7 @@
     .navbar {
       /*background-color: #0C3D60;*/
       background-color: #20447F;
+      color: blue;
     }
     .list-group-item{
       background-color: #20447F;
@@ -223,6 +225,17 @@
   </style>
 
   <body ng-controller='MainController as calc'>
+    <div ng-controller='MyCtrl as myC'>
+    <form action="submit">
+      <input type="text" class="input-group" ng-model='myC.user'>
+      <button type='submit' class='btn-lg'></button>
+      <!-- anything typed in here is magically saved to our Firebase database! -->
+      <input type="text" ng-model="data.text"/>
+      <!-- all changes from our Firebase database magically appear here! -->
+      <h1>You said: {{ data.text }}</h1>
+    </form>
+      <input type="text" class="input-group" ng-model='myC.try'>   
+    </div>
     <!-- <header> -->
       <div class="navbar navbar-inverse navbar-static-top" id='navbar'>
         <div class="container">
@@ -233,7 +246,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <!-- <a href="#" class='navbar-brand text-pm'>Tip Calculator</a> -->
+            <a href="#" class='navbar-brand text-pm' ng-show='calc.toggleResults'>Tip Calculator</a>
           </div>
           <div class="collapse navbar-collapse navHeaderCollapse">
             <ul class="nav navbar-nav navbar-right">
@@ -339,6 +352,10 @@
 
 
               <button class='btn btn-lg' type='submit'><strong>Calculate!</strong></button>
+              <p>hi mom</p>
+              <pre>
+  {{ ctrl.user | json }}
+</pre>
 
             </ul>
           </form>
@@ -379,6 +396,15 @@
     </div>
 
   </footer>
+  <!-- AngularJS -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script> -->
+  <!-- Augular Route -->
+  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js'></script>
+  <!-- Firebase -->
+  <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+
+  <!-- AngularFire -->
+  <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
   <script>
     $(function(){
 

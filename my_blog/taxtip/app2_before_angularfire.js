@@ -1,29 +1,6 @@
 (function(){
 	var app = angular.module('taxtip',['ngRoute', 'firebase']);
 
-	app.config(ApplicationConfig);
-
-	function ApplicationConfig($routeProvider){
-		$routeProvider.when('/', {
-			controller: 'MainController as ctrl',
-			templateUrl: 'about.html',
-		})
-	}
-
-	app.controller('MyCtrl', MyController);
-
-	function MyController($scope, $firebaseObject){
-		var rootRef = new Firebase('https://myblogbeta.firebaseio.com/data');
-		// var davidRef = rootRef.child('users').child('david');
-		// this.user = $firebaseObject(davidRef);
-		// this.user = $firebaseObject(rootRef);
-
-		var syncObject = $firebaseObject(rootRef);
-
-		syncObject.$bindTo($scope, "data");
-
-	}
-
 	// <body ng-controller='MainController as calc'>
 	app.controller('MainController', function(){
 		//as calc
