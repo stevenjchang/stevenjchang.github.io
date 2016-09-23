@@ -1,0 +1,128 @@
+/* 
+	SkyApp Bootstrap Sass Theme
+	Author: Brad Traversy
+	Version: 0.0.1
+
+*/
+/*	BASE - Base styles, variables, mixins, etc */
+/* Font Colors j*/
+/* Background Colors */
+/* Showcase Area */
+/* Font-Family */
+/* Mixins */
+/* line 1, ../scss/base/_normalize.scss */
+h1, h2, h3, h3, h5 {
+  margin-top: 0;
+}
+
+/* line 5, ../scss/base/_normalize.scss */
+.page-header {
+  margin-top: 30px;
+}
+
+/* line 9, ../scss/base/_normalize.scss */
+.no-pad-top {
+  padding-top: 0;
+}
+
+/* line 13, ../scss/base/_normalize.scss */
+.extra-pad {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/* from the Responsive Web Design YouTube video
+----- https://www.youtube.com/watch?v=9fHSbiCISOA */
+/* line 20, ../scss/base/_normalize.scss */
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 1, ../scss/base/_base.scss */
+body {
+  font-family: "Segoe UI", "Segoe WP", "Segoe Regular";
+  font-size: 15px;
+  list-style: 1.7em;
+  color: #666666;
+  padding-top: 60px;
+}
+
+@media screen and (max-width: 768px) {
+  /* line 9, ../scss/base/_base.scss */
+  body {
+    padding-top: 60px;
+  }
+}
+/* line 13, ../scss/base/_base.scss */
+a {
+  color: #00aff0;
+}
+
+/* line 17, ../scss/base/_base.scss */
+ul, li {
+  list-style: none;
+}
+
+/* line 21, ../scss/base/_base.scss */
+input, textarea, button {
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+}
+
+/* line 25, ../scss/base/_base.scss */
+img.img-main {
+  width: 70%;
+  margin-bottom: 40px;
+  display: block;
+  margin: auto;
+}
+
+/* line 31, ../scss/base/_base.scss */
+img.device-small {
+  width: 70%;
+  margin-bottom: -40px;
+}
+
+/* line 36, ../scss/base/_base.scss */
+#jumbotron-custom {
+  background: url("../img/taipei4.png") no-repeat center center;
+  /*background-color: red;*/
+  /*height:500px;
+  width:100%;*/
+  color: white;
+  min-height: 400px;
+  margin-top: 0px;
+}
+
+/* line 47, ../scss/base/_base.scss */
+img.group-img {
+  height: 60px;
+  width: 60px;
+}
+
+/* line 52, ../scss/base/_base.scss */
+img.img-group {
+  height: 50px;
+  width: 50px;
+}
+
+/* MODULES - Individual site components */
+/*
+@import 'modules/_typography.scss';
+@import 'modules/_blocks.scss';
+@import 'modules/_buttons.scss';
+@import 'modules/_sections.scss';
+@import 'modules/_components.scss';
+@import 'modules/_forms.scss';
+*/
+/* LAYOUTS - Page layout styles */
+/*
+@import 'layouts/_nav.scss';
+@import 'layouts/_header.scss';
+@import 'layouts/_footer.scss';
+*/
