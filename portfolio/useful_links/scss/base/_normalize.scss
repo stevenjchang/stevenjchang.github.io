@@ -1,0 +1,26 @@
+h1,h2,h3,h3,h5{
+	margin-top: 0;
+}
+
+.page-header{
+	margin-top: 30px;
+}
+
+.no-pad-top{
+	padding-top:0;
+}
+
+.extra-pad{
+	padding-top:40px;
+	padding-bottom: 40px;
+}
+
+/* from the Responsive Web Design YouTube video
+----- https://www.youtube.com/watch?v=9fHSbiCISOA */
+* {
+	padding: 0;
+	margin: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
