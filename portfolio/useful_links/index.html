@@ -1,19 +1,270 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Event Calendar</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-	<meta name="description" content="">
-	<meta name="author" content="">
-	<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js'></script>
-	<link href="css/main.css" rel="stylesheet">
-	<script type='text/javascript' src='js/app.js'></script>
-</head>
-<body>
+<html lang="en" ng-app='MainModule'>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title> stevenjchang - useful links for coding learners</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <!-- bootstrap jquery -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <!--angular 1-->
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js'></script>
+    <!-- ngTagsInput -->
+    <script src="http://mbenford.github.io/ngTagsInput/js/ng-tags-input.min.js"></script>
+    <link rel="stylesheet" href="http://mbenford.github.io/ngTagsInput/css/ng-tags-input.min.css" />
+   
+    <script type='text/javascript' src='js/app.js'></script>
+    <!-- google fonts Permanent Marker', cursive; -->
+    <link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="css/main.css" rel="stylesheet">
+  </head>
 	
-</body>
+  <!-- <body ng-controller=''>           BODY          BODY          BODY          -->
+  <body ng-controller='MainController as main'>
+
+		<!-- Start Content Block 1-8 -->
+	    <section class="content-block">
+	    	<div class="container" id='container1'>
+	    	
+				<ul class="nav nav-tabs text-center" role="tablist" id="myTab">
+						<li class="active"><a href="#tab1" role="tab" data-toggle="tab">Home</a></li>
+						<li><a href="#content-3-6">Portfolio</a></li>
+						<li><a href="#section1">Useful Links</a></li>
+						<li><a href="#tab4" role="tab" data-toggle="tab">About</a></li>
+				</ul>
+				
+				<div class="tab-content">
+					<div class="tab-pane fade in active" id="tab1">
+						<div class="row">
+							<div class="col-md-5 col-md-offset-1 col-sm-6">
+								<!-- <img class="img-responsive" src="http://placehold.it/600x400" data-selector="img"> -->
+								<iframe width="450" height="250" src="https://www.youtube.com/embed/EKdcLNngFmw" frameborder="0" allowfullscreen></iframe>
+							</div><!-- /.col -->
+							<div class="col-md-5 col-sm-6">
+								<div class="editContent" data-selector=".editContent" style="">
+									<h3>stevenjchang.com</h3>
+								</div>
+								<div class="editContent" data-selector=".editContent" style="">
+									<p>Steve is a self-taught software developer who specializes in JavaScript, AngularJS, and UX design. As a self-taught programmer who aspires for a second-chance at a first real career, Steve is passionate about community involvement and organizing tech-education events to help other also enter into a path into the technology field. Steve has a counseling a psychology background and many years of teaching and public speaking experience. Steve is from the Bay Area and currently residing in his parent’s home country of Taiwan.&nbsp;</p>
+								</div>
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+					</div><!-- /#tab1 -->
+					
+					<div class="tab-pane fade" id="tab2">
+						<div class="row">
+							<div class="col-sm-10 col-sm-offset-1 text-center">
+								<div class="editContent" data-selector=".editContent" style="outline: none; cursor: inherit;">
+									<h3>Development</h3>
+								</div>
+								<div class="editContent" data-selector=".editContent" style="outline: none; cursor: inherit;">
+									<p>Magnis modipsae que lib voloratati andigen daepedor quiate ut reporemni aut labor. Laceaque sitiorem ut restibusaes es tumquam core posae volor remped modis volor. Doloreiur qui commolu ptatemp dolupta orem retibusam emnis et consent accullignis lomnus.</p>
+								</div>
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+						<div class="row">
+							<div class="col-sm-6 col-sm-offset-3">
+								<img class="img-responsive" src="http://placehold.it/600x250" data-selector="img" style="outline: none; cursor: inherit;">
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+					</div><!-- /#tab2 -->
+					
+					<div class="tab-pane fade" id="tab3">
+						<div class="row">
+							<div class="col-md-4 col-md-push-3 col-md-offset-1 col-sm-6">
+								<img class="img-responsive" src="http://placehold.it/600x500" data-selector="img" style="outline: none; cursor: inherit;">
+							</div><!-- /.col -->
+							
+							<div class="col-md-3 col-md-pull-4 col-sm-6">
+								<div class="editContent" data-selector=".editContent" style="outline: none; cursor: inherit;">
+									<h3>Bootstrap</h3>
+								</div>
+								<div class="editContent" data-selector=".editContent" style="outline: none; cursor: inherit;">
+									<p>Magnis modipsae lib voloratati andigen daepedor quiate aut labor. Laceaque quiae sitiorem resti est lore tumquam core posae volor uso remped modis volor. Doloreiur qui commolu ptatemp dolupta orem retibusam emnis et consent it accullignis orum lomnus.</p>
+								</div>
+							</div><!-- /.col -->
+							
+							<div class="col-md-3 col-sm-6">
+								<div class="editContent" data-selector=".editContent" style="outline: none; cursor: inherit;">
+									<h3>Responsive</h3>
+								</div>
+								<div class="editContent" data-selector=".editContent" style="outline: none; cursor: inherit;">
+									<p>Magnis modipsae lib voloratati andigen daepedor quiate aut labor. Laceaque quiae sitiorem resti est lore tumquam core posae volor uso remped modis volor. Doloreiur qui commolu ptatemp dolupta orem retibusam emnis et consent it accullignis orum lomnus.</p>
+								</div>
+							</div><!-- /.col -->
+							
+						</div><!-- /.row -->
+					</div><!-- /#tab3 -->
+					
+					<div class="tab-pane fade" id="tab4">
+						<div class="row">
+							<div class="col-sm-6 col-sm-offset-3">
+								<img class="img-responsive" src="http://placehold.it/600x250" data-selector="img" style="outline: none; cursor: inherit;">
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+						<div class="row">
+							<div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 text-center">
+								<div class="editContent" data-selector=".editContent" style="outline: none; cursor: inherit;">
+									<h3>WordPress</h3>
+								</div>
+								<div class="editContent" data-selector=".editContent" style="outline: none; cursor: inherit;">
+									<p>Magnis modipsae que lib voloratati andigen daepeditem quiate ut reporemni aut labor. Laceaque quiae sitiorem rest non restibusaes es tumquam core posae volor remped modis volor. Doloreiur qui commolu ptatemp dolupta oreprerum tibusam emnis et consent accullignis.</p>
+								</div>
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+					</div><!-- /#tab4 -->
+					
+				</div><!-- /.tab-content -->
+				
+	    	</div><!-- /.container -->
+		</section>
+	    <!--// End Content Block 1-8 -->
+
+	  <!-- Start Content Block 3-6 -->
+	  <section id="content-3-6" class="content-block content-3-6">
+	      <div class="container">
+
+	          <div class="row">
+	              <!-- Feature Box 1 -->
+	              <div class="col-sm-4 col-xs-12">
+	                  <div class="feature-box">
+	                      <div class="icon">
+	                          <span class="fa fa-code" data-selector="span.fa" style="outline: none; cursor: inherit;"></span>
+	                      </div>
+	                      <div class="editContent" data-selector=".editContent">
+	                          <a href='tiptap.html'><h3>tip_calculator</h3></a>
+	                      </div>
+	                      <div class="editContent" data-selector=".editContent">
+	                          <p>practiced using Angular 1</p>
+	                      </div>
+	                  </div>
+	              </div>
+
+	              <!-- Feature Box 2 -->
+	              <div class="col-sm-4 col-xs-12">
+	                  <div class="feature-box">
+	                      <div class="icon">
+	                          <span class="fa fa-code" data-selector="span.fa"></span>
+	                      </div>
+	                      <div class="editContent" data-selector=".editContent">
+	                          <a href='http://stevenjchang.com/theodinproject/snake_game/index_copy.html'><h3>snake_game</h3></a>
+	                      </div>
+	                      <div class="editContent" data-selector=".editContent" style="outline: none; cursor: inherit;">
+	                          <p>using jQuery to manipulate the DOM</p>
+	                      </div>
+	                  </div>
+	              </div>
+
+	              <!-- Feature Box 3 -->
+	              <div class="col-sm-4 col-xs-12">
+	                  <div class="feature-box">
+	                      <div class="icon">
+	                          <span class="fa fa-code" data-selector="span.fa" style="outline: none; cursor: inherit;"></span>
+	                      </div>
+	                      <div class="editContent" data-selector=".editContent" style="outline: none; cursor: inherit;">
+	                          <a href='http://stevenjchang.com/theodinproject/mine_sweeper/index5.html'><h3>mine_sweeper</h3></a>
+	                      </div>
+	                      <div class="editContent" data-selector=".editContent" style="outline: none; cursor: inherit;">
+	                          <p>using jQuery to manipulate the DOM</p>
+	                      </div>
+	                  </div>
+	              </div>
+
+	          </div>
+	          <!-- Row Ends -->
+	      </div>
+	      <!-- Container Ends -->
+	  </section>
+	  <!--// END Content Block 3-6 -->
+
+
+
+
+
+
+
+
+    <section id='section1' class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <!-- <tags-input ng-model='q' type="search" class="form-control" placeholder="Search for..."></tags-input> -->
+          	<!-- <p>As a self-taught coder: I have complied a list of the most helpful tutorials, videos, and software that I have come across. Start typing in the search bar to search.</p> -->
+            <div class="input-group">
+              <input class='btn btn-default col-md-12' ng-model='textbox1' type="search" placeholder="Enter a Category..."></input>
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+              </span>
+            </div> <!-- /input-group -->
+        </div><!-- /.col-lg-6 -->
+
+        <div class="col-md-6 col-md-offset-3"> {{main.tags.length}} results found --- {{textbox2}} </div>
+      </div><!-- /.row -->
+    </section>
+
+    <section id="section2" class="col-md-12 container-fluid">
+      <div class="container">
+          <!-- CATEGORY TITLE WELL     CATEGORY TITLE WELL     CATEGORY TITLE WELL -->
+          <div class="well well-sm">
+              <strong>Category Title</strong>
+              <div class="btn-group">
+                  <a href="#" id="list" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-th-list">
+                  </span>List</a> <a href="#" id="grid" class="btn btn-default btn-sm"><span
+                      class="glyphicon glyphicon-th"></span>Grid</a>
+              </div>
+          </div>
+          <!-- PRODUCTS LIST-GROUP    PRODUCTS LIST-GROUP     PRODUCTS LIST-GROUP -->
+          <div id="products" class="row list-group">
+
+              <div class="item col-xs-4 col-lg-4" ng-repeat='product in main.tags | filter: textbox1'>
+                  <div class="thumbnail">
+                  	<div class=''>
+                  		<h4> {{product.heading}} </h4>
+                  	</div>
+                      <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
+                      <div class="caption">
+                      		<!-- <h3> {{product}} </h3> -->
+                          <h4 class="group inner list-group-item-heading"><a href="{{product.url}}">
+                              {{product.title}} </a></h4>
+                          <p class="group inner list-group-item-text">
+                              {{product.by}} </p>
+                          <div class="row">
+                          	<div class="col-xs-12 col-md-6">
+                              <a class="btn btn-success" href="http://www.jquery2dotnet.com">Summary</a>
+                            </div>
+                            <div class="col-xs-12 col-md-12 col-sm-12">
+                              <p>{{product.tags}}</p>
+                            </div>
+                              
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>  <!-- end #products .row.list-group -->
+      </div> <!-- end container -->
+    </section> <!-- end section 2 -->
+
+
+
+  </body>
+
+  <!-- Augular Route -->
+  <!-- <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js'></script> -->
+  <!-- Firebase -->
+  <script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>
+
+  <!-- AngularFire -->
+  <script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
 </html>
+
+
+
+
+

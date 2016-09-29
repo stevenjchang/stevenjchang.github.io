@@ -57,24 +57,34 @@ body {
     padding-top: 60px;
   }
 }
-/* line 13, ../scss/base/_base.scss */
+/* line 12, ../scss/base/_base.scss */
+#test {
+  color: #00aff0;
+}
+
+/* line 15, ../scss/base/_base.scss */
+#test1 {
+  color: #7fba00;
+}
+
+/* line 20, ../scss/base/_base.scss */
 a {
   color: #00aff0;
 }
 
-/* line 17, ../scss/base/_base.scss */
+/* line 24, ../scss/base/_base.scss */
 ul, li {
   list-style: none;
 }
 
-/* line 21, ../scss/base/_base.scss */
+/* line 28, ../scss/base/_base.scss */
 input, textarea, button {
   -moz-border-radius: 0px;
   -webkit-border-radius: 0px;
   border-radius: 0px;
 }
 
-/* line 25, ../scss/base/_base.scss */
+/* line 32, ../scss/base/_base.scss */
 img.img-main {
   width: 70%;
   margin-bottom: 40px;
@@ -82,13 +92,13 @@ img.img-main {
   margin: auto;
 }
 
-/* line 31, ../scss/base/_base.scss */
+/* line 38, ../scss/base/_base.scss */
 img.device-small {
   width: 70%;
   margin-bottom: -40px;
 }
 
-/* line 36, ../scss/base/_base.scss */
+/* line 43, ../scss/base/_base.scss */
 #jumbotron-custom {
   background: url("../img/taipei4.png") no-repeat center center;
   /*background-color: red;*/
@@ -99,13 +109,13 @@ img.device-small {
   margin-top: 0px;
 }
 
-/* line 47, ../scss/base/_base.scss */
+/* line 54, ../scss/base/_base.scss */
 img.group-img {
   height: 60px;
   width: 60px;
 }
 
-/* line 52, ../scss/base/_base.scss */
+/* line 59, ../scss/base/_base.scss */
 img.img-group {
   height: 50px;
   width: 50px;
