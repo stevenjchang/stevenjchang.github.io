@@ -15,7 +15,7 @@ $(document).ready(function() {
   });
 
   $("#tweet_box").on("click", function(){
-  	$('#twitter-share-button').attr("href", "https://twitter.com/intent/tweet?text=Hailo%20world");
+  	$('#twitter-share-button').attr("href", "https://twitter.com/intent/tweet?text=" + encodeURIComponent(new_quote[0] + " " + new_quote[1]));
 
   });
 
