@@ -10,6 +10,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	<!--angular 1-->
 	<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js'></script>
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/main.css">
 	<script src='js/app.js'></script>
 </head>
@@ -20,12 +21,18 @@
 				<h4 id="quote_text">quote text</h4>
 				<span id="author_text"></span>
 			</div>
-			<div id="tweet_box">
-				<p>tweet</p>
+			<div>
+				<button id="tweet_box" class='btn btn-xl'>
+					<a id="twitter-share-button" href='#'>
+					  <!-- href="https://twitter.com/intent/tweet?text=Hello%20world" data-size='large'> -->
+					<i class="fa fa-twitter"></i>
+					</a>
+				</button>
 				
 			</div>
 			<div>
 				<button id="gen_new_quote" class='btn btn-danger'>generate new quote</button>
+				<!-- <button id="get-another-quote-button" class='btn btn-danger'>generate new quote</button> -->
 				
 			</div>
 		</div>
