@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  host: MyString
+  location: MyString
+  date: 2017-01-18
+  timestart: 2017-01-18 15:33:35
+  category: MyString
+
+two:
+  title: MyString
+  host: MyString
+  location: MyString
+  date: 2017-01-18
+  timestart: 2017-01-18 15:33:35
+  category: MyString
