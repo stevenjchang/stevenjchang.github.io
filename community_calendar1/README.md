@@ -7,9 +7,5 @@ B) Make a calendar so I can personally keep track of upcoming events in Taipei, 
 1. Create a model
     rails g model event title:string host:string location:string date:date timestart:datetime category:string
 
-title:string
-host:string
-location:string
-timestart:datetime
-timeend:datetime
-category:string
+2. Create a controller
+    rails g controller events 
