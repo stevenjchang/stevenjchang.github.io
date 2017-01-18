@@ -3,9 +3,11 @@
 </h1>
 
 <% @events.each do |event| %>
-  <li> <%= link_to event.title, event %> </li>
-  <li> <%= event.host %> </li>
-  <li> <%= event.timestart %> </li>
+  <li> Event "title" <%= link_to event.title, event %> </li>
+  <li> Host: <%= event.host %> </li>
+  <li> Date: <%= event.date %> </li>
+  <li> Time: <%= event.timestart %> </li>
+
   <br>
 
 <% end %>
