@@ -15,6 +15,6 @@ B) Make a calendar so I can personally keep track of upcoming events in Taipei, 
 5. Def show and make it link-able
 6. create show.html.erb
 7. install faker gem
-
+8. How do you initialize faker?
 
 10. at some point put faker data

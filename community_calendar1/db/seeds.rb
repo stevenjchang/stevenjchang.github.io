@@ -6,4 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Event.create([{title: 'Karaoke in Xinyi'}, {title: 'Book reading', host: Faker::Company.name, location: 'Mr Browns'}])
+3.times do
+  Event.create([{title: Faker::Book.title, host: Faker::Company.name, location: Faker::Address.city}])
+end
