@@ -17,4 +17,4 @@ B) Make a calendar so I can personally keep track of upcoming events in Taipei, 
 7. install faker gem
 8. How do you initialize faker?
 
-10. at some point put faker data
+10. make Faker customized categories 

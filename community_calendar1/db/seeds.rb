@@ -7,5 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 3.times do
-  Event.create([{title: Faker::Book.title, host: Faker::Company.name, location: Faker::Address.city}])
+  Event.create([{
+    title: Faker::Book.title,
+    host: Faker::Company.name,
+    location: Faker::Address.city,
+    date: Faker::Date.forward(14),
+    timestart: Faker::Time.forward(14, :evening)
+    # category:
+    }])
 end

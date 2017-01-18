@@ -5,5 +5,7 @@
 <% @events.each do |event| %>
   <li> <%= link_to event.title, event %> </li>
   <li> <%= event.host %> </li>
+  <li> <%= event.timestart %> </li>
+  <br>
 
 <% end %>
