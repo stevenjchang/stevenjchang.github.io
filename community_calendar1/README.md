@@ -8,4 +8,6 @@ B) Make a calendar so I can personally keep track of upcoming events in Taipei, 
     rails g model event title:string host:string location:string date:date timestart:datetime category:string
 
 2. Create a controller
-    rails g controller events 
+    rails g controller events
+
+3. Def index action 
